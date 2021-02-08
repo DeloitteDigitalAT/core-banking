@@ -1,0 +1,5 @@
+#!/bin/sh
+cd data-access-services
+mvn checkstyle:check
+# todo specify projects here
+
