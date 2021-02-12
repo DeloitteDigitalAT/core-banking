@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:9.6.10
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/Accounts.sql/:/docker-entrypoint-initdb.d/Accounts.sql
+    environment:
+      DATABASE_HOST: 127.0.0.1
+      POSTGRES_USER: rootadmin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: ACCOUNTS
+
+
+  pg10:
+    image: library/postgres:10.5
+    restart: always
+    ports:
+      - "5431:5432"
+    volumes:
+      - ./database//Transactions.sql:/docker-entrypoint-initdb.d/Transactions.sql
+    environment:
+      POSTGRES_USER: rootadmin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: TRANSACTIONS
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+      - "53603:53603"
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: rootadmin@deloitte.at
+      PGADMIN_DEFAULT_PASSWORD: root_password
+
+
+
+volumes:
+  pg-dataset:
