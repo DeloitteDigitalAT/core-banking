@@ -90,10 +90,12 @@ class ClientControllerTest {
 
     @Test
     void createClient_clientValid_return200AndClient() throws Exception {
+        ClientDto testClientDto = getTestClientDto();
+
         String response = this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/clients")
-                        .content(objectMapper.writeValueAsString(getTestClientDto()))
+                        .content(objectMapper.writeValueAsString(testClientDto))
                         .contentType("application/json"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andReturn().getResponse().getContentAsString();
@@ -107,17 +109,17 @@ class ClientControllerTest {
         Assertions.assertThat(clientDto.getAccountDtos().get(0).getId())
                 .isNotNull();
         Assertions.assertThat(clientDto.getAccountDtos().get(0).getFrequency())
-                .isEqualTo(getTestClientDto().getAccountDtos().get(0).getFrequency());
+                .isEqualTo(testClientDto.getAccountDtos().get(0).getFrequency());
         Assertions.assertThat(clientDto.getFirstName())
-                .isEqualTo(getTestClientDto().getFirstName());
+                .isEqualTo(testClientDto.getFirstName());
         Assertions.assertThat(clientDto.getLastName())
-                .isEqualTo(getTestClientDto().getLastName());
+                .isEqualTo(testClientDto.getLastName());
         Assertions.assertThat(clientDto.getSocialSecurityNumber())
-                .isEqualTo(getTestClientDto().getSocialSecurityNumber());
+                .isEqualTo(testClientDto.getSocialSecurityNumber());
         Assertions.assertThat(clientDto.getSex())
-                .isEqualTo(getTestClientDto().getSex());
+                .isEqualTo(testClientDto.getSex());
         Assertions.assertThat(clientDto.getDateOfBirth())
-                .isEqualTo(getTestClientDto().getDateOfBirth());
+                .isEqualTo(testClientDto.getDateOfBirth());
     }
 
     private Client getTestClient() {
