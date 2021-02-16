@@ -1,7 +1,9 @@
 # Data service
+
 It is a Web Service with Node.js using TypeScript and GraphQL
 
 ## Install pre-commit hook for ESlint and Prettier
+
 The project uses the following git hook (commands executed on `git commit`):
 
 - pre-commit: Runs Prettier on all changed files from /data-sevrice/ directory. After that checking code with ESlint.
@@ -27,12 +29,15 @@ npm install
 ```
 
 ## Scripts
+
 To run ESLint
+
 ```
 npm run lint
 ```
 
 To run Prettier
+
 ```
 npm run pretty-quick
 ```
