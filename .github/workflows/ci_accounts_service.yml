@@ -22,7 +22,7 @@ jobs:
           java-version: 11
       - name: Run tests and Publish package
         uses: xlui/action-maven-cli@master
-          with:
-            lifecycle: 'mvn -B clean deploy --file data-access-services/accounts-service/pom.xml -am'
+        with:
+          lifecycle: 'mvn -B clean deploy --file data-access-services/accounts-service/pom.xml -am'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
