@@ -1,5 +1,3 @@
 #!/bin/sh
-cd data-access-services
-mvn checkstyle:check
-# todo specify projects here
-
+mvn -f ./data-access-services/pom.xml checkstyle:check
+mvn -f ./domain-service/credit-application/pom.xml checkstyle:check
