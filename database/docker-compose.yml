@@ -29,18 +29,5 @@ services:
       POSTGRES_DB: TRANSACTIONS
 
 
-  pgadmin:
-    image: dpage/pgadmin4
-    depends_on:
-      - postgres
-    ports:
-      - "53603:53603"
-      - "80:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: rootadmin@deloitte.at
-      PGADMIN_DEFAULT_PASSWORD: root_password
-
-
-
 volumes:
   pg-dataset:
