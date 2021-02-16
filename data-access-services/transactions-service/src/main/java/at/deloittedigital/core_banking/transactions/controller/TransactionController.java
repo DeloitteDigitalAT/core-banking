@@ -1,9 +1,7 @@
 package at.deloittedigital.core_banking.transactions.controller;
 
 import at.deloittedigital.core_banking.transactions.dto.TransactionDto;
-import at.deloittedigital.core_banking.transactions.entity.Transaction;
 import at.deloittedigital.core_banking.transactions.mapper.TransactionMapper;
-import at.deloittedigital.core_banking.transactions.repository.TransactionRepository;
 import at.deloittedigital.core_banking.transactions.service.TransactionService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
