@@ -40,8 +40,8 @@ class TransactionControllerTest {
     }
 
     @Test
-    void getAllTransactions_return200AndTransactions() throws Exception {
-        Transaction transaction = transactionRepository.save(getTestTransaction());
+    void getTransactions_accountIdNull_return200AndAllTransactions() throws Exception {
+        List<Transaction> transactions = transactionRepository.saveAll(getTestTransactions());
 
         String response = this.mockMvc
                 .perform(MockMvcRequestBuilders.get("/transactions"))
@@ -51,16 +51,56 @@ class TransactionControllerTest {
         List<TransactionDto> transactionDtos = Arrays.asList(objectMapper.readValue(response, TransactionDto[].class));
 
         Assertions.assertThat(transactionDtos)
-                .hasSize(1)
-                .containsAll(Collections.singletonList(transactionMapper.map(transaction)));
+                .hasSize(2)
+                .containsAll(transactionMapper.map(transactions));
     }
 
-    private Transaction getTestTransaction() {
-        return new Transaction(
+    @Test
+    void getTransactions_accountIdNotNull_return200AndTransactionsByAccountId() throws Exception {
+        List<Transaction> transactions = transactionRepository.saveAll(getTestTransactions());
+
+        String response = this.mockMvc
+                .perform(MockMvcRequestBuilders.get("/transactions?accountId=1"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andReturn().getResponse().getContentAsString();
+
+        List<TransactionDto> transactionDtos = Arrays.asList(objectMapper.readValue(response, TransactionDto[].class));
+
+        Assertions.assertThat(transactionDtos)
+                .hasSize(1)
+                .containsAll(Collections.singletonList(transactionMapper.map(transactions.get(0))));
+    }
+
+    @Test
+    void getTransactions_accountIdDoesNotExist_return200AndEmptyTransactions() throws Exception {
+        transactionRepository.saveAll(getTestTransactions());
+
+        String response = this.mockMvc
+                .perform(MockMvcRequestBuilders.get("/transactions?accountId=3"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andReturn().getResponse().getContentAsString();
+
+        List<TransactionDto> transactionDtos = Arrays.asList(objectMapper.readValue(response, TransactionDto[].class));
+
+        Assertions.assertThat(transactionDtos)
+                .isEmpty();
+    }
+
+    private List<Transaction> getTestTransactions() {
+        Transaction transaction1 = new Transaction(
                 1L,
                 "IBAN",
                 "Type",
                 "100",
                 "1000");
+
+        Transaction transaction2 = new Transaction(
+                2L,
+                "IBAN",
+                "Type",
+                "100",
+                "1000");
+
+        return Arrays.asList(transaction1, transaction2);
     }
 }

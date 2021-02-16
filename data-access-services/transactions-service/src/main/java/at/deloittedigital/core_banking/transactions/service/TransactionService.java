@@ -13,11 +13,14 @@ public class TransactionService {
     private final TransactionRepository transactionRepository;
 
     /**
-     * Retrieves all transactions.
+     * Retrieves transactions by account ID. Returns all transactions if no account ID is specified.
      *
-     * @return all transactions
+     * @return transactions by account ID or all transactions
      */
-    public List<Transaction> getAllTransactions() {
-        return transactionRepository.findAll();
+    public List<Transaction> getTransactions(Long accountId) {
+        if (accountId == null) {
+            return transactionRepository.findAll();
+        }
+        return transactionRepository.findByAccountId(accountId);
     }
 }
