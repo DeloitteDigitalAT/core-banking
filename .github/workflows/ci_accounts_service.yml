@@ -15,12 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 11
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-      - name: Run tests and Publish package
+      - name: 1. Checkout code
+        uses: actions/checkout@v2
+
+      - name: 2. Run maven test
         uses: xlui/action-maven-cli@master
         with:
           lifecycle: 'mvn -B clean deploy --file data-access-services/accounts-service/pom.xml -am'
