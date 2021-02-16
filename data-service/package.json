@@ -10,7 +10,6 @@
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "husky": "^4.3.8",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "pretty-quick": "^3.1.0",
@@ -18,15 +17,8 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts --no-error-on-unmatched-pattern",
-    "pretty-quick": "pretty-quick",
-    "postinstall": "husky install"
+    "pretty-quick": "pretty-quick"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run pretty-quick --staged && npm run lint"
-    }
-  },
-  "private": true,
   "author": "M.Balabaev / Deloitte Digital AT",
   "license": "ISC"
 }

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd data-service
+npm run pretty-quick --staged && npm run lint
