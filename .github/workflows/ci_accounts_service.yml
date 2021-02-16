@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 11
         maven-version: 3.6.3
-    - name: Run tests and publish package
-      run: mvn -B clean deploy --file data-access-services/accounts-service/pom.xml
+    - name: Run tests and Publish package
+      run: mvn -B clean deploy --file data-access-services/accounts-service/pom.xml -am
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
