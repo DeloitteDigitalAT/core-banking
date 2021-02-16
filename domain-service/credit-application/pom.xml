@@ -11,13 +11,12 @@
     </parent>
 
     <groupId>at.deloittedigital</groupId>
-    <artifactId>credit-application</artifactId>
+    <artifactId>credit-application-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <java.version>11</java.version>
         <checkstyle.version>3.1.2</checkstyle.version>
-
     </properties>
 
     <dependencies>

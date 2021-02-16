@@ -1,8 +1,6 @@
 package at.deloittedigital.core_banking.credit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import at.deloittedigital.core_banking.credit.api.data.TestClientResponse;
@@ -25,10 +23,6 @@ class CoreBankingCreditApplicationTests {
     private ObjectMapper objectMapper;
 
     @Test
-    void contextLoads() {
-    }
-
-    @Test
     void whenCallingTestEndpoint_returnsSumOfTransactions() throws Exception {
 
         String responseBody = mockMvc
@@ -38,8 +32,8 @@ class CoreBankingCreditApplicationTests {
 
         TestClientResponse response = objectMapper.readValue(responseBody, TestClientResponse.class);
 
-        assertNull(response.getErrors());
-        assertEquals(new BigDecimal("1.00"), response.getSumTransactions());
+        assertThat(response.getErrors()).isNull();
+        assertThat(response.getSumTransactions()).isEqualTo(new BigDecimal("1.00"));
 
     }
 
@@ -53,9 +47,8 @@ class CoreBankingCreditApplicationTests {
 
         TestClientResponse response = objectMapper.readValue(responseBody, TestClientResponse.class);
 
-        assertNotNull(response.getErrors());
-        assertEquals(1, response.getErrors().size());
-        assertEquals("ABC321", response.getErrors().get(0).getValue());
+        assertThat(response.getErrors()).hasSize(1);
+        assertThat(response.getErrors().get(0).getValue()).isEqualTo("ABC321");
 
     }
 }
