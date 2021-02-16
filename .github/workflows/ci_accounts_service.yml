@@ -21,7 +21,6 @@ jobs:
         with:
           java-version: 11
       - name: Run tests and Publish package
-        uses: xlui/action-maven-cli@master
         with:
           lifecycle: 'mvn -B clean deploy --file=data-access-services/pom.xml -pl accounts-service -amd'
         env:
