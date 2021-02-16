@@ -8,7 +8,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./database/Accounts.sql/:/docker-entrypoint-initdb.d/Accounts.sql
+      - ./Accounts.sql/:/docker-entrypoint-initdb.d/Accounts.sql
     environment:
       DATABASE_HOST: 127.0.0.1
       POSTGRES_USER: rootadmin
@@ -22,7 +22,7 @@ services:
     ports:
       - "5431:5432"
     volumes:
-      - ./database//Transactions.sql:/docker-entrypoint-initdb.d/Transactions.sql
+      - ./Transactions.sql:/docker-entrypoint-initdb.d/Transactions.sql
     environment:
       POSTGRES_USER: rootadmin
       POSTGRES_PASSWORD: securepassword
