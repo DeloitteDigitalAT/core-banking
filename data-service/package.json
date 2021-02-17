@@ -17,6 +17,7 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts --no-error-on-unmatched-pattern",
+    "linttest": "eslint . --ext .ts --no-error-on-unmatched-pattern",
     "pretty-quick": "pretty-quick --pattern \"data-service/**/*.*\""
   },
   "author": "M.Balabaev / Deloitte Digital AT",
