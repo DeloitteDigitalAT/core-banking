@@ -4,6 +4,7 @@ import at.deloittedigital.core_banking.transactions.entity.Transaction;
 import at.deloittedigital.core_banking.transactions.repository.TransactionRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,7 @@ public class TransactionService {
      *
      * @return transactions by account ID or all transactions
      */
-    public List<Transaction> getTransactions(Long accountId) {
+    public List<Transaction> getTransactions(@Nullable Long accountId) {
         if (accountId == null) {
             return transactionRepository.findAll();
         }
