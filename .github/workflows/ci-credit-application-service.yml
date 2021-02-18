@@ -27,6 +27,6 @@ jobs:
       run: mvn -B verify --file domain-service/credit-application/pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -DskipTests
+      run: mvn deploy --file domain-service/credit-application/pom.xml -DskipTests
       env:
         GITHUB_TOKEN: ${{ github.token }}
