@@ -32,10 +32,16 @@ public class Transaction extends BaseEntity {
     /**
      * Transaction amount.
      */
-    private String amount;
+    private Decimal amount;
 
     /**
      * Account balance after the transaction.
      */
-    private String balance;
+    private Decimal balance;
+
+    /**
+     * Date of transaction
+     */
+    private LocalDate transactionDate;
+
 }

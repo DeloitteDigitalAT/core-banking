@@ -28,6 +28,11 @@ public class Account extends BaseEntity {
      * transaction.
      */
     private String frequency;
+    /**
+     * Date account was created
+     */
+    private LocalDate accountDate;
+
 
     @Override
     public boolean equals(Object o) {

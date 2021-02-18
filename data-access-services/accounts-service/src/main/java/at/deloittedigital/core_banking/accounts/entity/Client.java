@@ -50,6 +50,8 @@ public class Client extends BaseEntity {
      */
     private LocalDate dateOfBirth;
 
+
+
     public void addAccount(Account account) {
         accounts.add(account);
         account.setClient(this);
