@@ -22,7 +22,7 @@ jobs:
         java-version: 11
 
     - name: Build with Maven
-      run: mvn -B verify --file data-access-services/accounts-service/pom.xml
+      run: mvn verify --file data-access-services/pom.xml -pl accounts-service -am
 
     #- name: Publish to GitHub Packages Apache Maven
     #  run: mvn deploy --file domain-service/credit-application/pom.xml -DskipTests
