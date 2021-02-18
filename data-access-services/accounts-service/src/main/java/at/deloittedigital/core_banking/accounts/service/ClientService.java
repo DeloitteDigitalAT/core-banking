@@ -28,7 +28,7 @@ public class ClientService {
      * @param id of the client that should be retrieved
      * @return the client if it exists, otherwise an exception is thrown
      */
-    public Client getClientById(Long id) {
+    public Client getClientById(String id) {
         Client client = clientRepository.getClientById(id);
 
         if (client == null) {

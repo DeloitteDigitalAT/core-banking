@@ -29,7 +29,7 @@ public class ClientController {
     }
 
     @GetMapping("/clients/{id}")
-    public ClientDto getClientById(@PathVariable Long id) {
+    public ClientDto getClientById(@PathVariable String id) {
         log.info("Getting client with ID {}", id);
         return clientMapper.map(clientService.getClientById(id));
     }

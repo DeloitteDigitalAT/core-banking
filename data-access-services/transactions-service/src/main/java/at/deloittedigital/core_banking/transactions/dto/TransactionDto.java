@@ -1,5 +1,6 @@
 package at.deloittedigital.core_banking.transactions.dto;
 
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,13 +16,13 @@ public class TransactionDto {
 
     private Long id;
 
-    private Long accountId;
+    private String accountId;
 
     private String accountIban;
 
     private String type;
 
-    private String amount;
+    private BigDecimal amount;
 
-    private String balance;
+    private BigDecimal balance;
 }

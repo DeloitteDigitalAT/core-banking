@@ -20,7 +20,7 @@ public class TransactionController {
     private final TransactionMapper transactionMapper;
 
     @GetMapping("/transactions")
-    public List<TransactionDto> getTransactions(@RequestParam(required = false) Long accountId) {
+    public List<TransactionDto> getTransactions(@RequestParam(required = false) String accountId) {
         log.info("Getting transactions");
         return transactionMapper.map(transactionService.getTransactions(accountId));
     }

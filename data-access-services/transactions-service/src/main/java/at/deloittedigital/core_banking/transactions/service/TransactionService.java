@@ -18,7 +18,7 @@ public class TransactionService {
      *
      * @return transactions by account ID or all transactions
      */
-    public List<Transaction> getTransactions(@Nullable Long accountId) {
+    public List<Transaction> getTransactions(@Nullable String accountId) {
         if (accountId == null) {
             return transactionRepository.findAll();
         }
