@@ -40,14 +40,6 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>Deloitte Digital - Core Banking</name>
-            <url>https://maven.pkg.github.com/DeloitteDigitalAT/core-banking</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <plugins>
 
