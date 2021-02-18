@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @SpringBootTest(properties = {"core-banking.credit.datasource.mode=mock"})
 @AutoConfigureMockMvc
-class CoreBankingCreditApplicationTests {
+class CoreBankingCreditApplicationIT {
 
     @Autowired
     private MockMvc mockMvc;
