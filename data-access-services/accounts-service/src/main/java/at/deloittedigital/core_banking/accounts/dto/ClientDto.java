@@ -17,7 +17,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class ClientDto {
 
-    private Long id;
+    private String id;
 
     @JsonProperty("accounts")
     private List<AccountDto> accountDtos = new ArrayList<>();

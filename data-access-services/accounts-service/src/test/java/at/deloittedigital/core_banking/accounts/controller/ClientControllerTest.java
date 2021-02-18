@@ -1,5 +1,7 @@
 package at.deloittedigital.core_banking.accounts.controller;
 
+import static java.util.Collections.singletonList;
+
 import at.deloittedigital.core_banking.accounts.dto.AccountDto;
 import at.deloittedigital.core_banking.accounts.dto.ClientDto;
 import at.deloittedigital.core_banking.accounts.entity.Account;
@@ -10,7 +12,6 @@ import at.deloittedigital.core_banking.lib.controller.ControllerErrorHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
@@ -18,11 +19,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
+@ActiveProfiles("dev")
 @AutoConfigureMockMvc
 class ClientControllerTest {
 
@@ -56,7 +59,7 @@ class ClientControllerTest {
 
         Assertions.assertThat(clientDtos)
                 .hasSize(1)
-                .containsAll(Collections.singletonList(clientMapper.map(client)));
+                .containsAll(singletonList(clientMapper.map(client)));
     }
 
     @Test
@@ -124,7 +127,8 @@ class ClientControllerTest {
 
     private Client getTestClient() {
         Client client = new Client();
-        client.setAccounts(Collections.singletonList(new Account(client, "Weekly")));
+        client.setId("KL123");
+        client.setAccounts(singletonList(new Account("a1", client, "Weekly", LocalDate.of(2020, 1, 1))));
         client.setFirstName("John");
         client.setLastName("Doe");
         client.setSocialSecurityNumber(1L);
@@ -135,7 +139,8 @@ class ClientControllerTest {
 
     private ClientDto getTestClientDto() {
         ClientDto clientDto = new ClientDto();
-        clientDto.setAccountDtos(Collections.singletonList(new AccountDto(null, "Monthly")));
+        clientDto.setId("KL123");
+        clientDto.setAccountDtos(singletonList(new AccountDto("a1", "Monthly")));
         clientDto.setFirstName("Jane");
         clientDto.setLastName("Doe");
         clientDto.setSocialSecurityNumber(2L);

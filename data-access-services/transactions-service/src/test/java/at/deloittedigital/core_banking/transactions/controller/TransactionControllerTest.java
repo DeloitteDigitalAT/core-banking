@@ -5,6 +5,8 @@ import at.deloittedigital.core_banking.transactions.entity.Transaction;
 import at.deloittedigital.core_banking.transactions.mapper.TransactionMapper;
 import at.deloittedigital.core_banking.transactions.repository.TransactionRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -14,11 +16,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
+@ActiveProfiles("dev")
 @AutoConfigureMockMvc
 class TransactionControllerTest {
 
@@ -60,7 +64,7 @@ class TransactionControllerTest {
         List<Transaction> transactions = transactionRepository.saveAll(getTestTransactions());
 
         String response = this.mockMvc
-                .perform(MockMvcRequestBuilders.get("/transactions?accountId=1"))
+                .perform(MockMvcRequestBuilders.get("/transactions?accountId=a1"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andReturn().getResponse().getContentAsString();
 
@@ -89,17 +93,21 @@ class TransactionControllerTest {
     private List<Transaction> getTestTransactions() {
         Transaction transaction1 = new Transaction(
                 1L,
+                "a1",
                 "IBAN",
                 "Type",
-                "100",
-                "1000");
+                new BigDecimal("100.00"),
+                new BigDecimal("1000.00"),
+                LocalDate.of(2020, 1, 1));
 
         Transaction transaction2 = new Transaction(
                 2L,
+                "a2",
                 "IBAN",
                 "Type",
-                "100",
-                "1000");
+                new BigDecimal("100.00"),
+                new BigDecimal("1000.00"),
+                LocalDate.of(2020, 1, 1));
 
         return Arrays.asList(transaction1, transaction2);
     }

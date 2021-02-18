@@ -13,7 +13,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class AccountDto {
 
-    private Long id;
+    private String id;
 
     private String frequency;
 }
