@@ -44,13 +44,4 @@ public class Transaction extends BaseEntity {
      */
     private LocalDate transactionDate;
 
-    /**
-     * Created date of the record
-     */
-    private LocalDate createdDate;
-
-    /**
-     * Most recent modified date
-     */
-    private LocalDate modifiedDate;
 }

@@ -33,16 +33,6 @@ public class Account extends BaseEntity {
      */
     private LocalDate accountDate;
 
-    /**
-     * Created date of the record
-     */
-    private LocalDate createdDate;
-
-    /**
-     * Most recent modified date
-     */
-    private LocalDate modifiedDate;
-
 
     @Override
     public boolean equals(Object o) {

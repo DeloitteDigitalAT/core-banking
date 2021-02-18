@@ -50,15 +50,6 @@ public class Client extends BaseEntity {
      */
     private LocalDate dateOfBirth;
 
-    /**
-     * Created date of the record
-     */
-    private LocalDate createdDate;
-
-    /**
-     * Most recent modified date
-     */
-    private LocalDate modifiedDate;
 
 
     public void addAccount(Account account) {
