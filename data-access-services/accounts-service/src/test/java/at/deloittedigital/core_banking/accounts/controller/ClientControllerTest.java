@@ -140,7 +140,7 @@ class ClientControllerTest {
     private ClientDto getTestClientDto() {
         ClientDto clientDto = new ClientDto();
         clientDto.setId("KL123");
-        clientDto.setAccountDtos(singletonList(new AccountDto("a1", "Monthly")));
+        clientDto.setAccountDtos(singletonList(new AccountDto("a1", "Monthly", LocalDate.of(2021, 1, 1))));
         clientDto.setFirstName("Jane");
         clientDto.setLastName("Doe");
         clientDto.setSocialSecurityNumber(2L);

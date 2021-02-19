@@ -17,6 +17,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class ClientDto {
 
+    @JsonProperty("clientId")
     private String id;
 
     @JsonProperty("accounts")

@@ -1,5 +1,6 @@
 package at.deloittedigital.core_banking.accounts.controller;
 
+import at.deloittedigital.core_banking.accounts.dto.AccountDto;
 import at.deloittedigital.core_banking.accounts.dto.ClientDto;
 import at.deloittedigital.core_banking.accounts.entity.Client;
 import at.deloittedigital.core_banking.accounts.mapper.ClientMapper;
@@ -32,6 +33,13 @@ public class ClientController {
     public ClientDto getClientById(@PathVariable String id) {
         log.info("Getting client with ID {}", id);
         return clientMapper.map(clientService.getClientById(id));
+    }
+
+    @GetMapping("/clients/{id}/accounts")
+    public List<AccountDto> getAccountsByClientId(@PathVariable String id) {
+        log.info("Getting accounts of client with ID {}", id);
+        ClientDto client = clientMapper.map(clientService.getClientById(id));
+        return client.getAccountDtos();
     }
 
     @PostMapping("/clients")
