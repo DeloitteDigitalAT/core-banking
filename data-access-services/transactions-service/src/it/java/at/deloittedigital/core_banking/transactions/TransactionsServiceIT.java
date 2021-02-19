@@ -1,4 +1,4 @@
-package at.deloittedigital.core_banking.transactions.controller;
+package at.deloittedigital.core_banking.transactions;
 
 import at.deloittedigital.core_banking.transactions.dto.TransactionDto;
 import at.deloittedigital.core_banking.transactions.entity.Transaction;
@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @ActiveProfiles("dev")
 @AutoConfigureMockMvc
-class TransactionControllerTest {
+class TransactionsServiceIT {
 
     @Autowired
     private MockMvc mockMvc;

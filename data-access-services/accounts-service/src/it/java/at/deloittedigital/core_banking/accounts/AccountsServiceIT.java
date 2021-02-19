@@ -1,4 +1,4 @@
-package at.deloittedigital.core_banking.accounts.controller;
+package at.deloittedigital.core_banking.accounts;
 
 import static java.util.Collections.singletonList;
 
@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @ActiveProfiles("dev")
 @AutoConfigureMockMvc
-class ClientControllerTest {
+class AccountsServiceIT {
 
     @Autowired
     private MockMvc mockMvc;
