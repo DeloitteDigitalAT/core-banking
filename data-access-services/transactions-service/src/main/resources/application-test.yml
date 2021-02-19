@@ -4,7 +4,7 @@ spring:
   datasource:
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://transactionsdb:5431/TRANSACTIONS
+    url: jdbc:postgresql://transactionsdb:5432/TRANSACTIONS
     username: rootadmin # todo configure user
     password: securepassword
   jpa:

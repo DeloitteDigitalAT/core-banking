@@ -15,7 +15,6 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: ACCOUNTS
 
-
   transactionsdb:
     image: library/postgres:10.5
     restart: always
@@ -33,28 +32,26 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - transactionsdb
       - accountsdb
-
+    environment: 
+    - "SPRING_PROFILES_ACTIVE=test"      
 
   transactions-service:
-    image: core-banking/transaction-service
+    image: core-banking/transactions-service
     ports:
       - "8090:8090"
     depends_on:
       - transactionsdb
-      - accountsdb
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
-
 
   credit-application-service:
     image: core-banking/credit-application-service
     ports:
       - "8070:8070"
     depends_on:
-      - transactionsdb
-      - accountsdb
+      - transactions-service
+      - accounts-service
 
 volumes:
   pg-dataset:
