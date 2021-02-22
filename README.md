@@ -65,3 +65,4 @@ The git hooks can be skipped with `--no-verify`.
 
 For more info: https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
 
+TEST
