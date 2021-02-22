@@ -9,7 +9,7 @@ The project uses the following git hook (commands executed on `git commit`):
 Run the following command to set up the git hooks:
 
 ```
-git config core.hooksPath config/hooks
+git config core.hooksPath devops/config/hooks
 ```
 
 The git hooks can be skipped with `--no-verify`.
