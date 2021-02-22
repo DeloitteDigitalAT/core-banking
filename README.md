@@ -43,3 +43,23 @@ Configuration guide is available at https://github.com/DeloitteDigitalAT/core-ba
 - Sonar
 - TBD
 
+## Install pre-commit hook for checkstyle, ESlint and Prettier
+
+The project uses the following git hook (commands executed on `git commit`):
+
+- pre-commit: Runs mvn checkstyle on java modules (data-access-service and domain-service) and ESlint along with Prettier on all changed JS files (data-service).
+
+Run the following command to set up the git hooks:
+
+```
+git config core.hooksPath config/hooks
+```
+
+if it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." then try to run from root of project directory. It makes the hook executable.
+
+```
+chmod +x config/hooks/pre-commit
+```
+
+The git hooks can be skipped with `--no-verify`.
+
