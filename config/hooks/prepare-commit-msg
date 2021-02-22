@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Prepends the ticket number to the commit message if the branch name has the expected format.
+# Expected branch name format: 1234-branch-name
+
+COMMIT_MESSAGE_FILE=$1
+
+COMMIT_MESSAGE=$(cat $COMMIT_MESSAGE_FILE)
+
+TICKET_NUMBER=$(git rev-parse --abbrev-ref HEAD | grep -Eo '^([0-9]*)')
+
+if [[ $TICKET_NUMBER == "" || "$COMMIT_MESSAGE" == "$TICKET_NUMBER"* ]]
+then
+  exit 0;
+fi
+
+echo "$TICKET_NUMBER - $COMMIT_MESSAGE" > $COMMIT_MESSAGE_FILE

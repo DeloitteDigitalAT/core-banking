@@ -38,12 +38,12 @@ The repo can be cloned using
 
 
 ## Configure static code analysis tools
-- Checksyle: used to enforce Java coding convenions and formatting specified in `/config/checkstyle/checkstyle.xml`.
+- git hook: used to enforce Java coding convenions and formatting specified in `/config/checkstyle/checkstyle.xml`. And linting for JS. 
 Configuration guide is available at https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
 - Sonar
 - TBD
 
-## Install pre-commit hook for checkstyle, ESlint and Prettier
+### Install git pre-commit hook for checkstyle, ESlint and Prettier
 
 The project uses the following git hook (commands executed on `git commit`):
 
@@ -62,4 +62,6 @@ chmod +x config/hooks/pre-commit
 ```
 
 The git hooks can be skipped with `--no-verify`.
+
+For more info: https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
 

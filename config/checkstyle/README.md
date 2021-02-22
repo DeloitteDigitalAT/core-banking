@@ -4,7 +4,7 @@
 
 The project uses the following git hook (commands executed on `git commit`):
 
-- pre-push: Checks the coding conventions using checkstyle
+- pre-commit: Checks the coding conventions using checkstyle for java and ESlint along with Prettier for JS files
 
 Run the following command to set up the git hooks:
 
