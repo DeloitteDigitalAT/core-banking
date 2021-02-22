@@ -38,7 +38,7 @@ The repo can be cloned using
 
 
 ## Configure static code analysis tools
-- git hook: used to enforce Java coding convenions and formatting specified in `/config/checkstyle/checkstyle.xml`. And linting for JS. 
+- git hook: used to enforce Java coding conventions and formatting specified in `/config/checkstyle/checkstyle.xml`. And linting for JS. 
 Configuration guide is available at https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
 - Sonar
 - TBD
