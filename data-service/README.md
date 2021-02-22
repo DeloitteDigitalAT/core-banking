@@ -41,3 +41,70 @@ To run Prettier
 ```
 npm run pretty-quick
 ```
+
+## GraphQL queries
+
+```
+query Client($id:String!) {
+  client(id:$id) {
+    clientId
+    firstName
+    lastName
+    socialSecurityNumber
+    sex
+    dateOfBirth
+    accounts {
+      accountId
+      frequency
+      createDate
+      transactions {
+        accountId
+        accountIban
+        type
+        amount
+        balance
+        amount
+        transId
+        }
+    }
+  }
+}
+
+query Accounts($id:String!) {
+  accounts(clientId:$id) {
+    accountId
+    frequency
+    createDate
+    transactions {
+        accountId
+        accountIban
+        type
+        amount
+        balance
+        amount
+        transId
+    }
+  }
+}
+
+query Transactions($accountId:Float!) {
+  transactions(accountId:$accountId) {
+    accountId
+    accountIban
+    type
+    amount
+    balance
+    amount
+    transId
+  }
+}
+```
+
+### query variables
+
+```
+{
+  "id":"B12456",
+  "accountId": 12286356
+}
+```
