@@ -12,6 +12,14 @@ Run the following command to set up the git hooks:
 git config core.hooksPath devops/config/hooks
 ```
 
+If it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." 
+
+Then try to run from root of project directory. It makes the hook executable.
+
+```
+chmod +x devops/config/hooks/pre-commit
+```
+
 The git hooks can be skipped with `--no-verify`.
 
 ## Configure code formatting 

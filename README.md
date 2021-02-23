@@ -38,29 +38,12 @@ The repo can be cloned using
 
 
 ## Configure static code analysis tools
-- git hook: used to enforce Java coding conventions and formatting specified in `/config/checkstyle/checkstyle.xml`. And linting for JS. 
+- git pre-commit hook
+    - Checkstyle: Used to enforce Java coding conventions and formatting specified in `/config/checkstyle/checkstyle.xml`. 
+    - Linter: ESlint and Prettier for JS. 
+
 Configuration guide is available at https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
+
 - Sonar
+
 - TBD
-
-### Install git pre-commit hook for checkstyle, ESlint and Prettier
-
-The project uses the following git hook (commands executed on `git commit`):
-
-- pre-commit: Runs mvn checkstyle on java modules (data-access-service and domain-service) and ESlint along with Prettier on all changed JS files (data-service).
-
-Run the following command to set up the git hooks:
-
-```
-git config core.hooksPath devops/config/hooks
-```
-
-if it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." then try to run from root of project directory. It makes the hook executable.
-
-```
-chmod +x devops/config/hooks/pre-commit
-```
-
-The git hooks can be skipped with `--no-verify`.
-
-For more info: https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
