@@ -42,6 +42,12 @@ To run Prettier
 npm run pretty-quick
 ```
 
+## Build Docker container
+
+```
+docker build -t core-banking/data-service .
+```
+
 ## GraphQL queries
 
 ```

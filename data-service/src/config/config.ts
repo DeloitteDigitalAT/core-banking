@@ -1,8 +1,8 @@
 export const config = {
   accounts: {
-    url: "http://localhost:8080",
+    url: process.env.ACCOUNTS_HOST || "http://localhost:8080",
   },
   transactions: {
-    url: "http://localhost:8090",
+    url: process.env.TRANSACTIONS_HOST || "http://localhost:8090",
   },
 };
