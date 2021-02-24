@@ -2,7 +2,7 @@
 set -e
 
 # Build and verify all modules
-mvn clean package
+mvn clean install
 
 # Build containers for individual services
 mvn -f ./transactions-service/pom.xml \
