@@ -61,8 +61,8 @@ services:
       - transactions-service
       - accounts-service
     environment:
-      ACCOUNTS_HOST: 'http://host.docker.internal:8080'
-      TRANSACTIONS_HOST: 'http://host.docker.internal:8090'
+      ACCOUNTS_HOST: 'http://accounts-service:8080'
+      TRANSACTIONS_HOST: 'http://transactions-service:8090'
       PORT: 4000
       NODE_ENV: test
 
