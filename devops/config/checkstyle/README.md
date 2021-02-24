@@ -4,12 +4,20 @@
 
 The project uses the following git hook (commands executed on `git commit`):
 
-- pre-push: Checks the coding conventions using checkstyle
+- pre-commit: Checks the coding conventions using checkstyle for java and ESlint along with Prettier for JS files
 
 Run the following command to set up the git hooks:
 
 ```
-git config core.hooksPath config/hooks
+git config core.hooksPath devops/config/hooks
+```
+
+If it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." 
+
+Then try to run from root of project directory. It makes the hook executable.
+
+```
+chmod +x devops/config/hooks/pre-commit
 ```
 
 The git hooks can be skipped with `--no-verify`.

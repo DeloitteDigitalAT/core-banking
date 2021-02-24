@@ -71,7 +71,7 @@
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${checkstyle.version}</version>
                     <configuration>
-                        <configLocation>../config/checkstyle/checkstyle.xml</configLocation>
+                        <configLocation>../devops/config/checkstyle/checkstyle.xml</configLocation>
                         <violationSeverity>warning</violationSeverity>
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     </configuration>
