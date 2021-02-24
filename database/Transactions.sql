@@ -1,8 +1,22 @@
+
+CREATE TABLE OVERDRAFT
+(
+overdraftId BIGSERIAL CONSTRAINT PK_OVERDRAFT_ID PRIMARY KEY,
+accountId Varchar(20),
+amount VARCHAR(20),
+balance VARCHAR(20),
+defaultCount BIGINT,
+createdDate DATE,
+modifiedDate DATE
+
+);
+
+
 CREATE TABLE TRANSACTION
 (
-TRANS_ID BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 10000),
+TRANS_ID BIGSERIAL CONSTRAINT PK_TRANS_ID PRIMARY KEY,
 accountId VARCHAR (20),
-accountIban VARCHAR (20),
+accountIban VARCHAR (50),
 type VARCHAR (20),
 amount DECIMAL(19,2),
 balance DECIMAL(19,2),
@@ -10,6 +24,7 @@ transactionDate DATE,
 createdDate date,
 modifiedDate date
 );
+
 
 INSERT INTO TRANSACTION ( accountId, accountIban, type, amount, balance, transactionDate, createdDate)
 VALUES
@@ -37,4 +52,22 @@ VALUES
 ('12286356','AT12286356','Credit',2459.63,5626.4,'2020-01-14',current_date ),
 ('00638932','AT00638932','Credit',7624.24,21987.02,'2014-04-17',current_date ),
 ('22286356','AT22286356','Debit',876.5,6337.52,'2017-11-14',current_date );
+
+
+CREATE TABLE ORDERS
+(
+orderId VARCHAR(20) CONSTRAINT PK_ORDER_ID PRIMARY KEY,
+bankTo VARCHAR(20),
+accountTo VARCHAR(20),
+referance VARCHAR(30),
+createdDate DATE,
+modifiedDate DATE,
+	trans_id BIGINT,
+
+	CONSTRAINT FK_TRAN_ORDER
+      FOREIGN KEY(trans_id)
+	  REFERENCES TRANSACTION(TRANS_ID)
+);
+
+
 
