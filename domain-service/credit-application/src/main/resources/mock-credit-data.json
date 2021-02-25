@@ -1,23 +1,21 @@
 {
   "data": {
-    "clients": [
-      {
-        "clientId": "1234",
-        "firstName": "John",
-        "lastName": "Smith",
-        "accounts": [
-          {
-            "transactions": [
-              {
-                "amount": 12.99
-              },
-              {
-                "amount": -11.99
-              }
-            ]
-          }
-        ]
-      }
-    ]
+    "client": {
+      "clientId": "1234",
+      "firstName": "John",
+      "lastName": "Smith",
+      "accounts": [
+        {
+          "transactions": [
+            {
+              "amount": 12.99
+            },
+            {
+              "amount": -11.99
+            }
+          ]
+        }
+      ]
+    }
   }
 }

@@ -21,8 +21,8 @@ public class MockCreditDataServiceTest {
 
         // THEN
         // todo not checking all fields, only added this test for verifying project setup
-        assertThat(result.getClients()).hasSize(1);
-        Client client = result.getClients().get(0);
+        assertThat(result.getClient()).isNotNull();
+        Client client = result.getClient();
         assertThat(client.getClientId()).isEqualTo(clientId);
 
     }

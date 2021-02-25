@@ -1,0 +1,12 @@
+# PROD profile
+# - Postgres database access configured with env variables
+spring:
+  datasource:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST}:5432/accounts
+    username: ${DB_USER}
+    password: ${DB_PWD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
