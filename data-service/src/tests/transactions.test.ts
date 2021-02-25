@@ -15,7 +15,7 @@ beforeAll(() => mockServer.listen());
 afterEach(() => mockServer.resetHandlers());
 afterAll(() => mockServer.close());
 
-test("test transactions schema and resolver", async () => {
+test("test Transactions schema and resolver", async () => {
   const server = await createServer();
 
   const { query } = createTestClient(server);

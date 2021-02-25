@@ -5,11 +5,13 @@ It is a Web Service with Node.js using TypeScript and GraphQL.
 App port `4000`.
 
 App environment variables
-* ACCOUNTS_HOST (Default `localhost:8080`.)
-* TRANSACTIONS_HOST (Default `localhost:8080`.)
+
+- ACCOUNTS_HOST (Default `localhost:8080`.)
+- TRANSACTIONS_HOST (Default `localhost:8090`.)
 
 ### Local dev
-GraphQL playground available at http://localhost:4000/ 
+
+GraphQL playground available at http://localhost:4000/
 
 ### Install pre-commit hook for ESlint and Prettier
 
@@ -52,16 +54,19 @@ npm run pretty-quick
 ```
 
 To run the app
+
 ```
 npm run start
 ```
 
 To run tests
+
 ```
 npm run test
 ```
 
 ### Build Docker container
+
 From data-service dir
 
 ```
