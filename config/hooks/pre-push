@@ -1,3 +1,0 @@
-#!/bin/sh
-mvn -f ./data-access-services/pom.xml checkstyle:check
-mvn -f ./domain-service/credit-application/pom.xml checkstyle:check

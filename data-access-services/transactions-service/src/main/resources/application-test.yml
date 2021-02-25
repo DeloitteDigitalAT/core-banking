@@ -1,0 +1,12 @@
+# TEST profile
+# - local Postgres database
+spring:
+  datasource:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://transactionsdb:5432/TRANSACTIONS
+    username: rootadmin # todo configure user
+    password: securepassword
+  jpa:
+    hibernate:
+      ddl-auto: validate

@@ -38,8 +38,12 @@ The repo can be cloned using
 
 
 ## Configure static code analysis tools
-- Checksyle: used to enforce Java coding convenions and formatting specified in `/config/checkstyle/checkstyle.xml`.
-Configuration guide is available at https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
-- Sonar
-- TBD
+- git pre-commit hook
+    - Checkstyle: Used to enforce Java coding conventions and formatting specified in `/config/checkstyle/checkstyle.xml`. 
+    - Linter: ESlint and Prettier for JS. 
 
+Configuration guide is available at https://github.com/DeloitteDigitalAT/core-banking/blob/master/config/checkstyle/README.md
+
+- Sonar
+
+- TBD

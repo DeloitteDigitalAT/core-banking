@@ -20,7 +20,7 @@ The project uses the following git hook (commands executed on `git commit`):
 Run the following command to set up the git hooks:
 
 ```
-git config core.hooksPath config/hooks
+git config core.hooksPath devops/config/hooks
 ```
 
 if it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." then try to run from root of project directory. It makes the hook executable.
