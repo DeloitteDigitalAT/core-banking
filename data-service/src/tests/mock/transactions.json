@@ -1,0 +1,66 @@
+[
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Credit",
+    "amount": 751.85,
+    "balance": 5053.56,
+    "transId": 10004
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Credit",
+    "amount": 7936.72,
+    "balance": 12990.28,
+    "transId": 10005
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Credit",
+    "amount": 8243.83,
+    "balance": 21234.11,
+    "transId": 10006
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Credit",
+    "amount": 743.7,
+    "balance": 21977.81,
+    "transId": 10008
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Debit",
+    "amount": 9138.0,
+    "balance": 12839.81,
+    "transId": 10010
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Debit",
+    "amount": 8885.1,
+    "balance": 3954.71,
+    "transId": 10012
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Debit",
+    "amount": 787.94,
+    "balance": 3166.77,
+    "transId": 10016
+  },
+  {
+    "accountId": "12286356",
+    "accountIban": "AT12286356",
+    "type": "Credit",
+    "amount": 2459.63,
+    "balance": 5626.4,
+    "transId": 10021
+  }
+]
