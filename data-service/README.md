@@ -1,8 +1,19 @@
 # Data service
 
-It is a Web Service with Node.js using TypeScript and GraphQL
+It is a Web Service with Node.js using TypeScript and GraphQL.
 
-## Install pre-commit hook for ESlint and Prettier
+App port `4000`.
+
+App environment variables
+
+- ACCOUNTS_HOST (Default `localhost:8080`.)
+- TRANSACTIONS_HOST (Default `localhost:8090`.)
+
+### Local dev
+
+GraphQL playground available at http://localhost:4000/
+
+### Install pre-commit hook for ESlint and Prettier
 
 The project uses the following git hook (commands executed on `git commit`):
 
@@ -14,21 +25,21 @@ Run the following command to set up the git hooks:
 git config core.hooksPath devops/config/hooks
 ```
 
-if it does't work with message "hint: The 'devops/config/hooks/pre-commit' hook was ignored because it's not set as executable." then try to run from root of project directory. It makes the hook executable.
+if it does't work with message "hint: The 'config/hooks/pre-commit' hook was ignored because it's not set as executable." then try to run from root of project directory. It makes the hook executable.
 
 ```
-chmod +x devops/config/hooks/pre-commit
+chmod +x config/hooks/pre-commit
 ```
 
 The git hooks can be skipped with `--no-verify`.
 
-## Install dependencies
+### Scripts
+
+Install dependencies
 
 ```
 npm install
 ```
-
-## Scripts
 
 To run ESLint
 
@@ -42,13 +53,28 @@ To run Prettier
 npm run pretty-quick
 ```
 
-## Build Docker container
+To run the app
 
 ```
-docker build -t core-banking/data-service .
+npm run start
 ```
 
-## GraphQL queries
+To run tests
+
+```
+npm run test
+```
+
+### Build Docker container
+
+From data-service dir
+
+```
+docker build -t data-service .
+docker run -p 4000:4000 data-service
+```
+
+### GraphQL queries
 
 ```
 query Client($id:String!) {
