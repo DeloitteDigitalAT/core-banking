@@ -74,6 +74,18 @@ docker build -t data-service .
 docker run -p 4000:4000 data-service
 ```
 
+or run bash script
+
+```
+./docker-build.sh
+```
+
+and from core-banking/devops/docker/ run
+
+```
+docker-compose up -d
+```
+
 ### GraphQL queries
 
 ```
