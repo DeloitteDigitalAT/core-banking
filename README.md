@@ -47,3 +47,38 @@ Configuration guide is available at https://github.com/DeloitteDigitalAT/core-ba
 - Sonar
 
 - TBD
+
+## How to run services and db locally. Requires JDK 11+ and Docker
+1) Build containers
+```
+cd data-access-services
+mvn install
+./docker-build.sh
+
+cd ../domain-service/credit-application/
+./docker-build.sh
+
+cd ../data-service
+./docker-build.sh
+```
+
+2) Run docker compose
+From root directory:
+```
+docker-compose up -d
+```
+3) Check processes to verify
+```
+docker ps
+```
+The following images should be added:
+- core-banking/data-service
+- core-banking/accounts-service
+- core-banking/transactions-service
+- core-banking/credit-application-service
+
+4) Check endpoints
+Accounts svc: GET  http://localhost:8080/clients
+Transactions svc: GET http://localhost:8090/transactions?accountId=00286356
+GraphQL data service: http://localhost:4000/graphql
+Domain svc GET http://localhost:8070/test?clientId=1234
