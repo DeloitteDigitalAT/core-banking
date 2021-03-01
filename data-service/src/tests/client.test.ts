@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { gql } from "apollo-server";
+import { gql } from "apollo-server-express";
 import { createTestClient } from "apollo-server-testing";
 import { config } from "../config/config";
 import clientMock from "./mock/client.json";

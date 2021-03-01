@@ -1,4 +1,4 @@
-import { ApolloServer } from "apollo-server";
+import { ApolloServer } from "apollo-server-express";
 import { createSchema } from "./createSchema";
 import dataSources from "./createDataSources";
 
