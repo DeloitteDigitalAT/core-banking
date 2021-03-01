@@ -52,7 +52,6 @@ Configuration guide is available at https://github.com/DeloitteDigitalAT/core-ba
 1) Build containers
 ```
 cd data-access-services
-mvn install
 ./docker-build.sh
 
 cd ../domain-service/credit-application/
@@ -65,6 +64,7 @@ cd ../data-service
 2) Run docker compose
 From root directory:
 ```
+cd devops/docker/
 docker-compose up -d
 ```
 3) Check processes to verify
