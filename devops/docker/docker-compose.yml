@@ -65,6 +65,8 @@ services:
       - transactions-service
       - accounts-service
       - data-service
+    environment:
+      - "SPRING_PROFILES_ACTIVE=test"
 
 volumes:
   pg-dataset:
