@@ -45,6 +45,18 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
 
+  data-service:
+    image: core-banking/data-service
+    ports:
+      - "4000:4000"
+    depends_on:
+      - transactions-service
+      - accounts-service
+    environment:
+      ACCOUNTS_HOST: 'http://accounts-service:8080'
+      TRANSACTIONS_HOST: 'http://transactions-service:8090'
+      PORT: 4000
+
   credit-application-service:
     image: core-banking/credit-application-service
     ports:
@@ -52,6 +64,7 @@ services:
     depends_on:
       - transactions-service
       - accounts-service
+      - data-service
 
 volumes:
   pg-dataset:
