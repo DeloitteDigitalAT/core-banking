@@ -24,8 +24,14 @@ public class MockCreditDataService implements CreditDataService {
     @Override
     public CreditData query(String clientId) {
         try (InputStream is = readMockData()) {
+            // In mock version we return either hardcoded data for the test client,
+            // or empty data for any other clients (=not found)
             QueryResult result = objectMapper.readValue(is, QueryResult.class);
-            return result.getCreditData().filter(clientId);
+            if (result.getCreditData().contains(clientId)) {
+                return result.getCreditData();
+            } else {
+                return CreditData.EMPTY;
+            }
         } catch (IOException e) {
             throw new RuntimeException("Error while loading mock response", e);
         }

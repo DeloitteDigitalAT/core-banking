@@ -24,7 +24,7 @@ public class CreditApplicationService {
         if (data.isEmpty()) {
             return Optional.empty();
         } else {
-            Client c = data.getClients().get(0);
+            Client c = data.getClient();
             return Optional.of(clientInfoMapper.map(c));
         }
     }

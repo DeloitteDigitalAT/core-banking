@@ -1,0 +1,5 @@
+core-banking:
+  credit:
+    datasource:
+      mode: "remote"
+      url: "http://data-service.core-banking:8000/graphql"

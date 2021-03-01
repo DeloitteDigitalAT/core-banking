@@ -1,11 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
 server:
   port: 8070
   error:
     whitelabel:
       enabled: false
-
-core-banking:
-  credit:
-    datasource:
-      mode: "mock"
-      url: ""
+  servlet:
+    contextPath: /api
