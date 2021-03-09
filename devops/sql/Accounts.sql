@@ -8,7 +8,8 @@ sex varchar(1),
 dateOfBirth date,
 createdDate date,
 modifiedDate date,
-citizenship varchar(50)
+citizenship varchar(50),
+flagged_customer boolean
 
 );
 
@@ -79,18 +80,18 @@ CONSTRAINT FK_CLIENT_ADDRESS
 
 
 
-INSERT INTO CLIENT(clientId, firstName, lastName, socialSecurityNumber, sex, dateOfBirth, createdDate,citizenship)
+INSERT INTO CLIENT(clientId, firstName, lastName, socialSecurityNumber, sex, dateOfBirth, createdDate,citizenship,flagged_customer)
 VALUES
-( 'B12456'	,'Brandi'	    ,'Savage'   ,'7854' ,'F','1995-11-18',CURRENT_DATE ,'Austria'  ),
-( 'C22466'	,'Christopher'	,'Arnold'   ,'3049' ,'M','1978-11-18',CURRENT_DATE ,'Nambia'  ),
-( 'J12578'  ,'Jerry'        ,'Miranda'  , '4164','F','1970-11-18',CURRENT_DATE ,'Austria' ),
-( 'D90606'  ,'Dustin'       ,'Castillo' , '5084','M','1987-11-18',CURRENT_DATE ,'Suriname'   ),
-( 'J23334'  ,'Jack'         ,'Jones'    ,'5903' ,'M','1993-11-18',CURRENT_DATE ,'Austria'  ),
-( 'E14559'	,'Emily'        ,'Young'    ,'2060' ,'F','1965-11-18',CURRENT_DATE ,'Japan'   ),
-( 'L34355'  ,'Linda'        ,'Andrews'  ,'8742'	,'F','1968-11-18',CURRENT_DATE  ,'Austria'  ),
-( 'W40699'	,'Wayne'        ,'Montoya'  ,'1936'  ,'M','1992-11-18',CURRENT_DATE ,'Cuba'  ),
-( 'B58493'  ,'Brian'        ,'Howe'     ,'9693'	 ,'M','1975-11-18',CURRENT_DATE ,'Austria'   ),
-( 'M97368'	,'Mark'         ,'Morgan'   , '779'  ,'M','1985-11-18',CURRENT_DATE ,'Austria' );
+( 'B12456'	,'Brandi'	    ,'Savage'   ,'7854' ,'F','1995-11-18',CURRENT_DATE ,'Austria' ,false ),
+( 'C22466'	,'Christopher'	,'Arnold'   ,'3049' ,'M','1978-11-18',CURRENT_DATE ,'Nambia'  ,false ),
+( 'J12578'  ,'Jerry'        ,'Miranda'  , '4164','F','1970-11-18',CURRENT_DATE ,'Austria' ,false ),
+( 'D90606'  ,'Dustin'       ,'Castillo' , '5084','M','1987-11-18',CURRENT_DATE ,'Suriname'   ,false ),
+( 'J23334'  ,'Jack'         ,'Jones'    ,'5903' ,'M','1993-11-18',CURRENT_DATE ,'Austria'  ,true),
+( 'E14559'	,'Emily'        ,'Young'    ,'2060' ,'F','1965-11-18',CURRENT_DATE ,'Japan'   ,false ),
+( 'L34355'  ,'Linda'        ,'Andrews'  ,'8742'	,'F','1968-11-18',CURRENT_DATE  ,'Austria'  ,false ),
+( 'W40699'	,'Wayne'        ,'Montoya'  ,'1936'  ,'M','1992-11-18',CURRENT_DATE ,'Cuba'  ,true),
+( 'B58493'  ,'Brian'        ,'Howe'     ,'9693'	 ,'M','1975-11-18',CURRENT_DATE ,'Austria'   ,true ),
+( 'M97368'	,'Mark'         ,'Morgan'   , '779'  ,'M','1985-11-18',CURRENT_DATE ,'Austria' ,false );
 
 INSERT INTO ACCOUNT(clientId, ACCOUNT_ID, accountDate, frequency, createdDate)
 VALUES
