@@ -31,7 +31,6 @@ public class Transaction extends BaseEntity {
     /**
      * Account ID of the customer issuing the transaction.
      */
-    @Column(name = "account_Id")
     private String accountId;
 
     /**
