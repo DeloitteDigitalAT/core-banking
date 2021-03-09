@@ -28,6 +28,18 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: TRANSACTIONS
 
+  creditriskdb:
+    image: library/postgres:10.5
+    restart: always
+    ports:
+      - "5430:5432"
+    volumes:
+      - ../sql/creditRisk.sql:/docker-entrypoint-initdb.d/creditRisk.sql
+    environment:
+      POSTGRES_USER: rootadmin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: CREDITRISK
+
 
 volumes:
   pg-dataset:
