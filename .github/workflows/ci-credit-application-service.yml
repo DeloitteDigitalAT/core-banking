@@ -36,7 +36,6 @@ jobs:
 #   - if: endsWith(github.REF, '/master') != true
 #     name: Run an analysis of the ${{ github.REF }} branch
 #     env:
-#     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #     run: sonar-scanner
 #       -Dsonar.host.url=${{ secrets.SONAR_URL }}
 #       -Dsonar.login=${{ secrets.SONAR_TOKEN }}
@@ -47,7 +46,6 @@ jobs:
     - if: endsWith(github.REF, '/master') == true
       name: Run an analysis of the master branch
       env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
@@ -57,7 +55,6 @@ jobs:
 
     - name: Run an analysis of the PR
       env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
