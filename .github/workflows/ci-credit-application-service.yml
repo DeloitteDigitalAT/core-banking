@@ -44,6 +44,7 @@ jobs:
 
     - if: endsWith(github.REF, '/master') != true
       name: Run an analysis of the master branch
+      working-directory: ./domain-service/credit-application
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
@@ -52,6 +53,7 @@ jobs:
         -Dsonar.java.binaries=/tmp
 
     - name: Run an analysis of the PR
+      working-directory: ./domain-service/credit-application
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
