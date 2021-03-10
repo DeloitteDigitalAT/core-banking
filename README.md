@@ -49,7 +49,7 @@ Configuration guide is available at https://github.com/DeloitteDigitalAT/core-ba
 - TBD
 
 ## How to run services and db locally. Requires JDK 11+ and Docker
-1) Build containers
+1) Build docker images
 ```
 cd data-access-services
 ./docker-build.sh
@@ -78,7 +78,7 @@ The following images should be added:
 - core-banking/credit-application-service
 
 4) Check endpoints
-Accounts svc: GET  http://localhost:8080/clients
-Transactions svc: GET http://localhost:8090/transactions?accountId=00286356
-GraphQL data service: http://localhost:4000/graphql
-Domain svc GET http://localhost:8070/test?clientId=1234
+- Accounts svc: GET  http://localhost:8080/clients
+- Transactions svc: GET http://localhost:8090/transactions?accountId=00286356
+- GraphQL data service: http://localhost:4000/graphql
+- Domain svc GET http://localhost:8070/test?clientId=B12456
