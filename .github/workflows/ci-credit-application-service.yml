@@ -42,7 +42,7 @@ jobs:
 #       -Dsonar.branch.name=${GITHUB_REF:11}
 #       -Dsonar.scm.provider=git
 
-    - if: endsWith(github.REF, '/master') != true
+    - if: endsWith(github.REF, '/master') == true
       name: Run an analysis of the master branch
       working-directory: ./domain-service/credit-application
       run: sonar-scanner
