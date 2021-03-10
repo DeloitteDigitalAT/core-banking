@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    - name: Setup sonarqube
+      uses: warchant/setup-sonar-scanner@v3
 
     - name: Cache the Maven packages to speed up build
       uses: actions/cache@v1
@@ -31,10 +33,37 @@ jobs:
     - name: Build with Maven
       run: mvn verify --file data-access-services/pom.xml -pl accounts-service -am
 
-    #- name: Publish to GitHub Packages Apache Maven
-    #  run: mvn deploy --file domain-service/credit-application/pom.xml -DskipTests
-    #  env:
-    #    GITHUB_TOKEN: ${{ github.token }}
+#   - if: endsWith(github.REF, '/master') != true
+#     name: Run an analysis of the ${{ github.REF }} branch
+#     run: sonar-scanner
+#       -Dsonar.host.url=${{ secrets.SONAR_URL }}
+#       -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#       -Dsonar.projectKey=credit-application-service
+#       -Dsonar.branch.name=${GITHUB_REF:11}
+#       -Dsonar.scm.provider=git
+
+    - if: endsWith(github.REF, '/master') == true
+      name: Run an analysis of the master branch
+      working-directory: ./data-access-services
+      run: sonar-scanner
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=data-access-services
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
+
+    - name: Run an analysis of the PR
+      working-directory: ./data-access-services
+      run: sonar-scanner
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=data-access-services
+        -Dsonar.pullrequest.key=${{ github.event.number }}
+        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
+        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
+        -Dsonar.pullrequest.github.repository=${{ github.repository }}
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
 
   pushToEcr:
 
