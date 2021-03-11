@@ -41,6 +41,7 @@ jobs:
         -Dsonar.projectKey=credit-application-service
         -Dsonar.branch.name=${GITHUB_REF##*/}
         -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
 
     - if: endsWith(github.REF, '/master') == true
       name: Run an analysis of the master branch
