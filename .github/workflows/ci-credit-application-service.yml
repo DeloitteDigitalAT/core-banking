@@ -40,10 +40,6 @@ jobs:
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=credit-application-service
         -Dsonar.branch.name=${{ github.head_ref }}
-        -Dsonar.pullrequest.key=${{ github.event.number }}
-        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
-        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
-        -Dsonar.pullrequest.github.repository=${{ github.repository }}
         -Dsonar.scm.provider=git
         -Dsonar.java.binaries=/tmp
 
@@ -57,18 +53,18 @@ jobs:
         -Dsonar.scm.provider=git
         -Dsonar.java.binaries=/tmp
 
-#    - name: Run an analysis of the PR
-#      working-directory: ./domain-service/credit-application
-#      run: sonar-scanner
-#        -Dsonar.host.url=${{ secrets.SONAR_URL }}
-#        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-#        -Dsonar.projectKey=credit-application-service
-#        -Dsonar.pullrequest.key=${{ github.event.number }}
-#        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
-#        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
-#        -Dsonar.pullrequest.github.repository=${{ github.repository }}
-#        -Dsonar.scm.provider=git
-#        -Dsonar.java.binaries=/tmp
+    - name: Run an analysis of the PR
+      working-directory: ./data-access-services
+      run: sonar-scanner
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=data-access-services
+        -Dsonar.pullrequest.key=${{ github.event.number }}
+        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
+        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
+        -Dsonar.pullrequest.github.repository=${{ github.repository }}
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
 
   pushToEcr:
 
