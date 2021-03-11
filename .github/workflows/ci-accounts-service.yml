@@ -40,6 +40,10 @@ jobs:
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=data-access-services
         -Dsonar.branch.name=${{ github.head_ref }}
+        -Dsonar.pullrequest.key=${{ github.event.number }}
+        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
+        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
+        -Dsonar.pullrequest.github.repository=${{ github.repository }}
         -Dsonar.scm.provider=git
         -Dsonar.java.binaries=/tmp
 
