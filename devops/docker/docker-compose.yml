@@ -37,7 +37,7 @@ services:
     environment:
       POSTGRES_USER: rootadmin
       POSTGRES_PASSWORD: securepassword
-      POSTGRES_DB: CREDITRISK
+      POSTGRES_DB: CREDITAPPLICATION
 
   accounts-service:
     image: core-banking/accounts-service
