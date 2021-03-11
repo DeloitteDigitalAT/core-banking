@@ -34,12 +34,12 @@ jobs:
       run: mvn verify --file data-access-services/pom.xml -pl accounts-service -am
 
     - if: endsWith(github.REF, '/master') != true
-      name: Run an analysis of the ${GITHUB_REF##*/} branch
+      name: Run an analysis of the ${{ github.head_ref }} branch
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=data-access-services
-        -Dsonar.branch.name=${GITHUB_REF##*/}
+        -Dsonar.branch.name=${{ github.head_ref }}
         -Dsonar.scm.provider=git
         -Dsonar.java.binaries=/tmp
 
