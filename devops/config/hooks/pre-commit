@@ -3,3 +3,4 @@
 mvn -f ./data-access-services/pom.xml checkstyle:check
 mvn -f ./domain-service/credit-application/pom.xml checkstyle:check
 cd data-service && npm run pretty-quick --staged && npm run lint
+cd frontend && npm run pretty-quick --staged && npm run lint
