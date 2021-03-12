@@ -33,15 +33,15 @@ jobs:
     - name: Build with Maven
       run: mvn -B verify --file domain-service/credit-application/pom.xml
 
-    - if: endsWith(github.REF, '/master') != true
-      name: Run an analysis of the ${{ github.head_ref }} branch
-      run: sonar-scanner
-        -Dsonar.host.url=${{ secrets.SONAR_URL }}
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.projectKey=credit-application-service
-        -Dsonar.branch.name=${{ github.head_ref }}
-        -Dsonar.scm.provider=git
-        -Dsonar.java.binaries=/tmp
+#    - if: endsWith(github.REF, '/master') != true
+#      name: Run an analysis of the ${{ github.head_ref }} branch
+#      run: sonar-scanner
+#        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+#        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#        -Dsonar.projectKey=credit-application-service
+#        -Dsonar.branch.name=${{ github.head_ref }}
+#        -Dsonar.scm.provider=git
+#        -Dsonar.java.binaries=/tmp
 
     - if: endsWith(github.REF, '/master') == true
       name: Run an analysis of the master branch
@@ -54,11 +54,11 @@ jobs:
         -Dsonar.java.binaries=/tmp
 
     - name: Run an analysis of the PR
-      working-directory: ./data-access-services
+      working-directory: ./domain-service/credit-application
       run: sonar-scanner
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.projectKey=data-access-services
+        -Dsonar.projectKey=credit-application-service
         -Dsonar.pullrequest.key=${{ github.event.number }}
         -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
         -Dsonar.pullrequest.base=${{ github.BASE_REF }}

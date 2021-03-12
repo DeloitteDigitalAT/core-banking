@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>at.deloittedigital</groupId>
-    <artifactId>core-banking</artifactId>
+    <artifactId>data-access-services</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
