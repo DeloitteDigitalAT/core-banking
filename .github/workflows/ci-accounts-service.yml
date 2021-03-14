@@ -55,7 +55,8 @@ jobs:
 
     - name: Run an analysis of the PR
       working-directory: ./data-access-services
-      run: mvn clean verify sonar::sonar
+      run: mvn clean verify sonar:sonar
+        -Dsonar.coverage.jacoco.xmlReportPaths=accounts-service/target/site/jacoco-aggregate/jacoco.xml,transactions-service/target/site/jacoco-aggregate/jacoco.xml
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=data-access-services
