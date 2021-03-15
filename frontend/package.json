@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "lint": "eslint . --ext .ts,.tsx --no-error-on-unmatched-pattern",
     "pretty-quick": "pretty-quick --pattern \"frontend/**/*.*\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
