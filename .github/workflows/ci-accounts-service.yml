@@ -20,8 +20,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-#    - name: Setup sonarqube
-#      uses: warchant/setup-sonar-scanner@v3
 
     - name: Cache the Maven packages to speed up build
       uses: actions/cache@v1

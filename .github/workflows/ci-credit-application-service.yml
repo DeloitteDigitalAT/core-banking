@@ -20,8 +20,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Setup sonarqube
-      uses: warchant/setup-sonar-scanner@v3
 
     - name: Cache the Maven packages to speed up build
       uses: actions/cache@v1
@@ -33,19 +31,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B verify --file domain-service/credit-application/pom.xml
 
-    - if: endsWith(github.REF, '/master') == true
-      name: Run an analysis of the master branch
+    - name: Build and run sonar analysis of the PR
       working-directory: ./domain-service/credit-application
-      run: sonar-scanner
-        -Dsonar.host.url=${{ secrets.SONAR_URL }}
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.projectKey=credit-application-service
-        -Dsonar.scm.provider=git
-        -Dsonar.java.binaries=/tmp
-
-    - name: Run an analysis of the PR
-      working-directory: ./domain-service/credit-application
-      run: sonar-scanner
+      run: mvn clean verify sonar:sonar
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=credit-application-service
@@ -53,6 +41,16 @@ jobs:
         -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
         -Dsonar.pullrequest.base=${{ github.BASE_REF }}
         -Dsonar.pullrequest.github.repository=${{ github.repository }}
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
+
+    - if: endsWith(github.REF, '/master') == true
+      name: Run an analysis of the master branch
+      working-directory: ./domain-service/credit-application
+      run: sonar-scanner
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=credit-application-service
         -Dsonar.scm.provider=git
         -Dsonar.java.binaries=/tmp
 
