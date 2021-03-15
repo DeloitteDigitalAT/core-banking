@@ -44,7 +44,7 @@ jobs:
     - if: endsWith(github.REF, '/master') == true
       name: Run an analysis of the master branch
       working-directory: ./data-access-services
-      run: sonar-scanner
+      run: mvn sonar:sonar
         -Dsonar.host.url=${{ secrets.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.projectKey=data-access-services
