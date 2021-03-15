@@ -28,6 +28,18 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: TRANSACTIONS
 
+  credit-application-db:
+    image: library/postgres:10.5
+    restart: always
+    ports:
+      - "5429:5432"
+    volumes:
+      - ../sql/creditApplication.sql:/docker-entrypoint-initdb.d/creditApplication.sql
+    environment:
+      POSTGRES_USER: rootadmin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: CREDITAPPLICATION
+
 
 volumes:
   pg-dataset:

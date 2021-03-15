@@ -27,14 +27,26 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: TRANSACTIONS
 
+  credit-application-db:
+    image: library/postgres:10.5
+    restart: always
+    ports:
+      - "5429:5432"
+    volumes:
+      - ../sql/creditApplication.sql:/docker-entrypoint-initdb.d/creditApplication.sql
+    environment:
+      POSTGRES_USER: rootadmin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: CREDITAPPLICATION
+
   accounts-service:
     image: core-banking/accounts-service
     ports:
       - "8080:8080"
     depends_on:
       - accountsdb
-    environment: 
-    - "SPRING_PROFILES_ACTIVE=test"      
+    environment:
+    - "SPRING_PROFILES_ACTIVE=test"
 
   transactions-service:
     image: core-banking/transactions-service
