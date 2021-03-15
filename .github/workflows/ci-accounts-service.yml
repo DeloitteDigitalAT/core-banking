@@ -28,13 +28,28 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
 
-    - name: Build with Maven
-      run: mvn verify --file data-access-services/pom.xml -pl accounts-service -am
+    - name: Build and run sonar analysis of the PR
+      working-directory: ./data-access-services
+      run: mvn clean verify sonar:sonar
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=data-access-services
+        -Dsonar.pullrequest.key=${{ github.event.number }}
+        -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
+        -Dsonar.pullrequest.base=${{ github.BASE_REF }}
+        -Dsonar.pullrequest.github.repository=${{ github.repository }}
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
 
-    #- name: Publish to GitHub Packages Apache Maven
-    #  run: mvn deploy --file domain-service/credit-application/pom.xml -DskipTests
-    #  env:
-    #    GITHUB_TOKEN: ${{ github.token }}
+    - if: endsWith(github.REF, '/master') == true
+      name: Run an analysis of the master branch
+      working-directory: ./data-access-services
+      run: sonar-scanner
+        -Dsonar.host.url=${{ secrets.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.projectKey=data-access-services
+        -Dsonar.scm.provider=git
+        -Dsonar.java.binaries=/tmp
 
   pushToEcr:
 

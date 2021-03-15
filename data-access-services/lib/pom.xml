@@ -5,11 +5,15 @@
 
     <parent>
         <groupId>at.deloittedigital</groupId>
-        <artifactId>core-banking</artifactId>
+        <artifactId>data-access-services</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>lib</artifactId>
+
+    <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -32,5 +36,23 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

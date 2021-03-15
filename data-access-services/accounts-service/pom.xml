@@ -5,11 +5,15 @@
 
     <parent>
         <groupId>at.deloittedigital</groupId>
-        <artifactId>core-banking</artifactId>
+        <artifactId>data-access-services</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>accounts-service</artifactId>
+
+    <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -99,16 +103,11 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
                         <id>report</id>
-                        <phase>prepare-package</phase>
                         <goals>
-                            <goal>report</goal>
+                            <goal>report-aggregate</goal>
                         </goals>
+                        <phase>verify</phase>
                     </execution>
                 </executions>
             </plugin>

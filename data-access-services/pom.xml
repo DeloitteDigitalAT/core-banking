@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>at.deloittedigital</groupId>
-    <artifactId>core-banking</artifactId>
+    <artifactId>data-access-services</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -19,6 +19,7 @@
         <module>lib</module>
         <module>accounts-service</module>
         <module>transactions-service</module>
+        <module>test-report-aggregator</module>
     </modules>
 
     <properties>
@@ -30,6 +31,8 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+        <sonar-maven-plugin.version>3.8.0.2131</sonar-maven-plugin.version>
+        <aggregate.report.dir>test-report-aggregator/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
     </properties>
 
     <dependencyManagement>
@@ -129,8 +132,20 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
-
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
