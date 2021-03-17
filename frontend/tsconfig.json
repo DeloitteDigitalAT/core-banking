@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
+    // "baseUrl": "."
   },
-  "include": ["src", ".eslintrc.js"]
+  "include": ["src", ".eslintrc.js", "craco.config.js", "tailwind.config.js"]
 }
