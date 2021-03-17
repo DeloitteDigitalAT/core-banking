@@ -104,7 +104,7 @@ cd data-access-services
 cd ../domain-service/credit-application/
 ./docker-build.sh
 
-cd ../data-service
+cd ../../data-service
 ./docker-build.sh
 ```
 
