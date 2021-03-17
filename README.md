@@ -95,37 +95,12 @@ https://github.com/DeloitteDigitalAT/core-banking/blob/master/devops/config/chec
 
 Note: make sure that the required softwares are installed on the system (see section above)
 
-**1. Build containers**
-
+Run the bootstrap script from root directory:
 ```
-cd data-access-services
-./docker-build.sh
-
-cd ../domain-service/credit-application/
-./docker-build.sh
-
-cd ../../data-service
-./docker-build.sh
+./core_banking_bootstrap.sh
 ```
 
-**2. Run docker compose**
-
-From root directory:
-```
-cd devops/docker/
-docker-compose up -d
-```
-**3. Check processes to verify**
-```
-docker ps
-```
-The following images should be added:
-- core-banking/data-service
-- core-banking/accounts-service
-- core-banking/transactions-service
-- core-banking/credit-application-service
-
-**4. Check endpoints**
+Check endpoints
 
 - accounts-service: GET  http://localhost:8080/clients
 - transactions-service: GET http://localhost:8090/transactions?accountId=00286356
