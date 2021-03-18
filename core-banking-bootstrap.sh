@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function print_usage() {
+print_usage() {
   echo "[INFO]        Usage:"
   echo "[INFO]              ./core_banking_bootstrap.sh [skipBuild]"
   echo "[INFO]              skipBuild: optional flag to skip images build"
@@ -24,9 +24,8 @@ if [ "$status" == "7" ]; then
 fi
 
 echo "[INFO] Checking the current path..."
-path=$(pwd)
-if [[ ${path} != *"core-banking" ]]; then
-  echo "[ERROR] Current path ${path}, please run from the project root dir .../../core-banking."
+if [[ $0  != "./core-banking-bootstrap.sh" ]]; then
+  echo "[ERROR] Current path is $(pwd), please run from the project root dir .../../core-banking."
   print_usage
   exit 1
 fi
@@ -50,33 +49,37 @@ fi
 
 echo "[INFO] Starting docker containers..."
 docker-compose -f devops/docker/docker-compose.yml up -d
-DATA_SERVICE_ID=$(docker ps -aqf "name=data-service*")
-ACCOUNTS_SERVICE_ID=$(docker ps -aqf "name=accounts-service*")
-TRANSACTIONS_SERVICE_ID=$(docker ps -aqf "name=transactions-service*")
-CREDIT_APPLICATION_SERVICE_ID=$(docker ps -aqf "name=credit-application-service*")
-if [ -z "$DATA_SERVICE_ID" ]; then
-  echo "[ERROR] Could not find data service docker container, please run the script again."
-  exit 1
-fi
 
-if [ -z "$ACCOUNTS_SERVICE_ID" ]; then
-  echo "[ERROR] Could not find accounts service docker container,  please run the script again."
+check_docker_run() {
+CONTAINER_ID=$(docker ps -aqf "$2")
+if [ -z "$CONTAINER_ID" ]; then
+  echo "[ERROR] Could not find $1 docker container, please run the script again."
   exit 1
 fi
+}
 
-if [ -z "$TRANSACTIONS_SERVICE_ID" ]; then
-  echo "[ERROR] Could not find transactions service docker container,  please run the script again."
-  exit 1
-fi
-
-if [ -z "$CREDIT_APPLICATION_SERVICE_ID" ]; then
-  echo "[ERROR] Could not find credit application service docker container,  please run the script again."
-  exit 1
-fi
+check_docker_run "DATA_SERVICE" "name=data-service*"
+check_docker_run "ACCOUNTS_SERVICE" "name=accounts-service*"
+check_docker_run "TRANSACTIONS_SERVICE" "name=transactions-service*"
+check_docker_run "CREDIT_APPLICATION_SERVICE" "name=credit-application-service*"
 
 echo "[INFO] Waiting for docker containers to warm up..."
 sleep 5s
 
 echo "[INFO] Docker compose started successfully."
-echo "[INFO] Bootstrap of services and db's complete."
 docker ps
+
+check_http_status() {
+HTTP_CODE=$(curl  --write-out "%{http_code}\n" "$2" --output output.txt --silent)
+if [[ ${HTTP_CODE} == "5"* ]] ; then
+echo "[ERROR] Received a 5XX ($HTTP_CODE )response from the $1, check the logs and restart the script."
+fi
+}
+
+echo "[INFO] Checking if all the services are reachable."
+check_http_status "DATA_SERVICE" "http://localhost:4000/graphql"
+check_http_status "ACCOUNTS_SERVICE" "http://localhost:8080/clients"
+check_http_status "TRANSACTIONS_SERVICE" "http://localhost:8090/transactions?accountId=00286356"
+check_http_status "CREDIT_APPLICATION_SERVICE" "http://localhost:8070/api/test?clientId=test"
+
+echo "[INFO] Bootstrap of services and db's complete."
