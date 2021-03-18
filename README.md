@@ -97,7 +97,7 @@ Note: make sure that the required softwares are installed on the system (see sec
 
 Run the bootstrap script from root directory:
 ```
-./core_banking_bootstrap.sh
+./core-banking-bootstrap.sh
 ```
 
 Check endpoints
