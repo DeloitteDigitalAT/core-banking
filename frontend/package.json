@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -14,11 +15,11 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "lint": "eslint . --ext .ts,.tsx --no-error-on-unmatched-pattern",
     "pretty-quick": "pretty-quick --pattern \"frontend/**/*.*\"",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.1",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.20.5",
     "@types/react": "^17.0.3",
@@ -47,13 +50,16 @@
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
+    "autoprefixer": "^9.8.6",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-jest": "^24.2.1",
     "eslint-plugin-prettier": "^3.3.1",
+    "postcss": "^7.0.35",
     "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
 }
