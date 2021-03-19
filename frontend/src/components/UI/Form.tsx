@@ -64,12 +64,14 @@ const Form: React.FC<FormType> = properties => {
         if (element.error && newValue.length) {
           element.error = false;
         }
+        if (element.error && !newValue.length) {
+          element.error = true;
+        }
         element.value = newValue;
       }
       return element;
     });
     setForm(updElements);
-    checkErrors();
   };
   const clearForm = () => {
     const updElements = [...elements].map(element => {
