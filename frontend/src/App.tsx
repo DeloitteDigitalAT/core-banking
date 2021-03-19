@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageMain from "./pages/Main";
-import { SiteBody, TopMenu, Bottom, Content } from "./components/UI";
+import { SiteBody, Top, Bottom, Content } from "./components/UI";
 
 const App: React.FC = () => {
   return (
     <Router>
       <SiteBody>
-        <TopMenu />
+        <Top />
         <Content>
           <Switch>
             <Route component={PageMain} />
