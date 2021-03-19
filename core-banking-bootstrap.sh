@@ -25,7 +25,7 @@ fi
 
 echo "[INFO] Checking the current path..."
 if [[ $0  != "./core-banking-bootstrap.sh" ]]; then
-  echo "[ERROR] Current path is $(pwd), please run from the project root dir .../../core-banking."
+  echo "[ERROR] Current path is $(pwd), please run from the project root dir."
   print_usage
   exit 1
 fi
