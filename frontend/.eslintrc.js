@@ -24,6 +24,7 @@ module.exports = {
     },
     ecmaVersion: 2018,
     sourceType: "module",
+    tsconfigRootDir: __dirname,
     project: "tsconfig.json",
   },
   rules: {
@@ -34,5 +35,23 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        labelComponents: ["CustomLabel"],
+        labelAttributes: ["inputLabel"],
+        controlComponents: ["CustomInput"],
+        assert: "htmlFor",
+        depth: 3,
+      },
+    ],
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/anchor-has-content": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-param-reassign": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
   },
 };
