@@ -69,15 +69,6 @@ services:
       TRANSACTIONS_HOST: 'http://transactions-service:8090'
       PORT: 4000
 
-  frontend:
-    image: core-banking/frontend
-    ports:
-      - "8100:80"
-    depends_on:
-      - transactions-service
-      - accounts-service
-      - data-service
-
   credit-application-service:
     image: core-banking/credit-application-service
     ports:
@@ -88,6 +79,16 @@ services:
       - data-service
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
+
+  frontend:
+    image: core-banking/frontend
+    ports:
+      - "8000:80"
+    depends_on:
+      - transactions-service
+      - accounts-service
+      - data-service
+      - credit-application-service
 
 volumes:
   pg-dataset:
