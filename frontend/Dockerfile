@@ -2,7 +2,7 @@ FROM node:12-alpine as build
 WORKDIR /app
 
 COPY package.json /app/package.json
-RUN npm install --only=prod --silent
+RUN npm install --silent
 COPY . /app
 RUN npm run build 
 
