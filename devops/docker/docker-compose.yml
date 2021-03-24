@@ -80,5 +80,15 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
 
+  frontend:
+    image: core-banking/frontend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - transactions-service
+      - accounts-service
+      - data-service
+      - credit-application-service
+
 volumes:
   pg-dataset:
