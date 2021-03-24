@@ -83,7 +83,7 @@ services:
   frontend:
     image: core-banking/frontend
     ports:
-      - "8000:80"
+      - "8000:8000"
     depends_on:
       - transactions-service
       - accounts-service
