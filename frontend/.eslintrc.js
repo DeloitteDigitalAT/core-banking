@@ -53,5 +53,6 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": "off",
     "no-param-reassign": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
+    "react/destructuring-assignment": 0,
   },
 };
