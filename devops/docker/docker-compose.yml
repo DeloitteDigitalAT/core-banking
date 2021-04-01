@@ -80,5 +80,18 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
 
+  db2:
+    build: ./loans
+    image: db2_loans
+    hostname: db2
+    privileged: true
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: db2pwd
+      DBNAME: Loans
+    ports:
+      - "50000:50000"
+    volumes:
+      - ./data/loans:/database
 volumes:
   pg-dataset:
