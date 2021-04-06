@@ -1,7 +1,7 @@
 package at.deloittedigital.core_banking.credit.config;
 
 import com.amazonaws.xray.entities.Subsegment;
-import com.amazonaws.xray.spring.aop.AbstractXRayInterceptor;
+import com.amazonaws.xray.spring.aop.BaseAbstractXRayInterceptor;
 import java.util.Map;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class XRayInspector extends AbstractXRayInterceptor {
+public class XRayInspector extends BaseAbstractXRayInterceptor {
 
     @Override
     protected Map<String, Map<String, Object>> generateMetadata(ProceedingJoinPoint proceedingJoinPoint,
