@@ -39,6 +39,20 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: CREDITAPPLICATION
 
+  db2:
+    build: ./loans
+    image: db2_loans
+    hostname: db2
+    privileged: true
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: db2pwd
+      DBNAME: Loans
+    ports:
+      - "50000:50000"
+    volumes:
+      - ./data/loans:/database
+      
   accounts-service:
     image: core-banking/accounts-service
     ports:
@@ -79,21 +93,6 @@ services:
       - data-service
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
-
-
-  db2:
-    build: ./loans
-    image: db2_loans
-    hostname: db2
-    privileged: true
-    environment:
-      LICENSE: accept
-      DB2INST1_PASSWORD: db2pwd
-      DBNAME: Loans
-    ports:
-      - "50000:50000"
-    volumes:
-      - ./data/loans:/database
 
   frontend:
     image: core-banking/frontend
