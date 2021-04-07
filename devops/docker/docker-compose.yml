@@ -80,6 +80,7 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=test"
 
+
   db2:
     build: ./loans
     image: db2_loans
@@ -93,5 +94,17 @@ services:
       - "50000:50000"
     volumes:
       - ./data/loans:/database
+
+  frontend:
+    image: core-banking/frontend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - transactions-service
+      - accounts-service
+      - data-service
+      - credit-application-service
+
+
 volumes:
   pg-dataset:
