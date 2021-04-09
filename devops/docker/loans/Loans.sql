@@ -29,7 +29,8 @@ pre_closure_date Date,
 last_update_date Date,
 created_date Date,
 modified_date Date,
-LOAN_AMOUNT numeric(32,8));
+LOAN_AMOUNT decimal(32,8))
+
 
 CREATE TABLE LOAN.repayment_schedule(
 Loan_id VARCHAR(20),
