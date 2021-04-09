@@ -39,9 +39,9 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: CREDITAPPLICATION
 
-  db2:
+  loans-db:
     build: ./loans
-    image: db2_loans
+    image: loans_db2
     hostname: db2
     privileged: true
     environment:
@@ -52,7 +52,7 @@ services:
       - "50000:50000"
     volumes:
       - ./data/loans:/database
-      
+
   accounts-service:
     image: core-banking/accounts-service
     ports:

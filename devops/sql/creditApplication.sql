@@ -137,7 +137,7 @@ INSERT INTO client (client_id, first_name, last_name, date_of_birth, social_secu
 (2, 'Monica', 'Johnson', '1970-12-22', '343-45-7638', 'M', null, '2021-03-08', null, false, 'United Kingdom'),
 (3, 'Walter', 'Ewing', '1993-09-19', '497-02-3400', 'M', null, '2021-03-08', null, false, 'Spain'),
 (4, 'Jimmy', 'Chen', '1994-10-01', '691-19-1625', 'M', null, '2021-03-08', null, false, 'Gibraltar'),
-(5, 'Alyssa', 'Perez', '2014-08-03', '181-98-8987', 'F', null, '2021-03-08', null, false, 'Lao People''s Democratic Republic'),
+(5, 'Alyssa', 'Perez', '2014-08-03', '181-98-8987', 'F', null, '2021-03-08', null, false, 'Lao Peoples Democratic Republic'),
 (6, 'Justin', 'Gonzales', '1994-04-25', '781-11-8058', 'F', null, '2021-03-08', null, false, 'Armenia'),
 (7, 'Wyatt', 'Prince', '2019-01-03', '011-07-8200', 'M', null, '2021-03-08', null, false, 'Belize'),
 (8, 'Kimberly', 'Dixon', '1988-01-07', '193-03-9295', 'M', null, '2021-03-08', null, false, 'Ireland'),
@@ -466,8 +466,8 @@ INSERT INTO documents.meldezettle (mz_id, document_id, first_name, last_name, da
 ('1', 81, 'Sara', 'Stokes', '2013-06-07', 'M', 'Austria', '104431207', 'Nebenwohnsitz', '23917 Paul Summit', '475', 'Salzburg', 1010, '2006-06-05', '2021-04-07', null, false),
 ('2', 82, 'Monica', 'Johnson', '1970-12-22', 'M', 'United Kingdom', '156393206', 'Nebenwohnsitz', '1638 Victoria Ports Apt. 239', '461', 'Innsbruck', 2020, '2011-04-21', '2021-04-07', null, false),
 ('3', 83, 'Walter', 'Ewing', '1993-09-19', 'M', 'Spain', '106308214', 'Hauptwohnsitz', '239 Parks Crossroad', '427', 'Graz', 3010, '2002-05-08', '2021-04-07', null, false),
-('4', 84, 'Jimmy', 'Chen', '1994-10-01', 'M', 'Gibraltar', '110288955', 'Nebenwohnsitz', '2669 Michael Bridge', '1121', 'Vienna', 1200, '2008-12-24', '2021-04-07', null, false);
-('5', 85, 'Alyssa', 'Perez', '2014-08-03', 'F', 'Lao People''s Democratic Republic', '171109833', 'Nebenwohnsitz', '827 Edwards Extension Apt. 425', '17444', 'Linz', 1200, '2015-09-24', '2021-04-07', null, false),
+('4', 84, 'Jimmy', 'Chen', '1994-10-01', 'M', 'Gibraltar', '110288955', 'Nebenwohnsitz', '2669 Michael Bridge', '1121', 'Vienna', 1200, '2008-12-24', '2021-04-07', null, false),
+('5', 85, 'Alyssa', 'Perez', '2014-08-03', 'F', 'Lao Peoples Democratic Republic', '171109833', 'Nebenwohnsitz', '827 Edwards Extension Apt. 425', '17444', 'Linz', 1200, '2015-09-24', '2021-04-07', null, false),
 ('6', 86, 'Justin', 'Gonzales', '1994-04-25', 'F', 'Armenia', '105428068', 'Nebenwohnsitz', '427 Samuel Inlet', '93458', 'Salzburg', 1200, '2013-11-24', '2021-04-07', null, false),
 ('7', 87, 'Wyatt', 'Prince', '2019-01-03', 'M', 'Belize', '164924199', 'Nebenwohnsitz', '2193 Bishop Lakes', '15016', 'Innsbruck', 1010, '2006-02-13', '2021-04-07', null, false),
 ('8', 88, 'Kimberly', 'Dixon', '1988-01-07', 'M', 'Ireland', '108898826', 'Hauptwohnsitz', '1206 Bond Turnpike', '41121', 'Salzburg', 2020, '2010-07-27', '2021-04-07', null, false),
@@ -491,7 +491,7 @@ INSERT INTO documents.identity_card (ic_id, document_id, document_type, place_of
 (2, 2, 'IDCard', 'London', 'Monica', 'Johnson', 'United Kingdom', '2010-02-04', '19359251447', 'M', '2020-09-27', '2021-04-07', null, false),
 (3, 3, 'Passport', 'Madrid', 'Walter', 'Ewing', 'Spain', '2005-01-26', '19073558075', 'M', '2023-12-04', '2021-04-07', null, false),
 (4, 4, 'IDCard', 'Gibraltar', 'Jimmy', 'Chen', 'Gibraltar', '2001-08-03', '18647750966', 'M', '2030-12-24', '2021-04-07', null, false),
-(5, 5, 'IDCard', 'Vienna', 'Alyssa', 'Perez', 'Lao People''s Democratic Republic', '2015-06-07', '19131810902', 'F', '2034-04-30', '2021-04-07', null, false),
+(5, 5, 'IDCard', 'Vienna', 'Alyssa', 'Perez', 'Lao Peoples Democratic Republic', '2015-06-07', '19131810902', 'F', '2034-04-30', '2021-04-07', null, false),
 (6, 6, 'Driving License', 'Yerevan L', 'Justin', 'Gonzales', 'Armenia', '2011-12-23', '12236620940', 'F', '2026-01-15', '2021-04-07', null, false),
 (7, 7, 'Passport', 'Belmopan', 'Wyatt', 'Prince', 'Belize', '2014-10-04', '15783057178', 'M', '2021-01-01', '2021-04-07', null, false),
 (8, 8, 'IDCard', 'Dublin', 'Kimberly', 'Dixon', 'Ireland', '2019-10-28', '11016146283', 'M', '2031-12-19', '2021-04-07', null, false),
@@ -506,7 +506,7 @@ INSERT INTO documents.identity_card (ic_id, document_id, document_type, place_of
 (17, 17, 'Passport', 'St. Pierre', 'Matthew', 'Rowland', 'Saint Pierre and Miquelon', '2020-12-28', '12261564666', 'M', '2024-02-12', '2021-04-07', null, false),
 (18, 18, 'Passport', 'Vienna', 'David', 'Jenkins', 'Sao Tome and Principe', '2013-09-15', '18995661497', 'F', '2026-07-17', '2021-04-07', null, false),
 (19, 19, 'Driving License', 'Kiev', 'Megan', 'Soto', 'Ukraine', '2017-01-15', '10703690717', 'M', '2021-10-24', '2021-04-07', null, false),
-(20, 20, 'Driving License', 'Sana''a', 'Sean', 'Wilkinson', 'Yemen', '2013-11-07', '12930950149', 'F', '2034-09-01', '2021-04-07', null, false);
+(20, 20, 'Driving License', 'Sanaa', 'Sean', 'Wilkinson', 'Yemen', '2013-11-07', '12930950149', 'F', '2034-09-01', '2021-04-07', null, false);
 
 INSERT INTO documents.payslip (p_id, document_id, first_name, last_name, date_of_issue, month, salary, income_tax, social_tax, company_employeed, created_date, modified_date, is_deleted) VALUES
 (1,21, 'Sara', 'Stokes', '2020-08-03', 'August', 1000.00, 1200.00, 540.00, null, '2021-03-08', null, false),
