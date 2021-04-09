@@ -39,9 +39,9 @@ services:
       POSTGRES_PASSWORD: securepassword
       POSTGRES_DB: CREDITAPPLICATION
 
-  loans-db2:
+  loans-db:
     build: ./loans
-    image: db2_loans
+    image: loans_db2
     hostname: db2
     privileged: true
     environment:

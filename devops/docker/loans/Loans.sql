@@ -5,13 +5,13 @@ set schema LOAN;
 
 CREATE TABLE LOAN.loan_contracts(
 Loan_id VARCHAR(20),
-Accountid varchar(20),
+Account_id varchar(20),
 loan_amount decimal(19,2),
 tenure_in_months BIGINT,
 interest_rate decimal(19,2),
 risk_rating decimal(19,2),
-contract_date Date
-,created_date Date,
+contract_date Date,
+created_date Date,
 modified_date Date);
 
 CREATE TABLE LOAN.loan_fulfillment(
@@ -29,7 +29,7 @@ pre_closure_date Date,
 last_update_date Date,
 created_date Date,
 modified_date Date,
-LOAN_AMOUNT decimal(32,8))
+LOAN_AMOUNT decimal(19,8));
 
 
 CREATE TABLE LOAN.repayment_schedule(
@@ -45,7 +45,7 @@ created_date Date,
 modified_date Date);
 
 
-insert into LOAN.loan_contracts (loan_id, accountid, loan_amount, tenure_in_months, interest_rate, risk_rating, contract_date, created_date, modified_date) values
+insert into LOAN.loan_contracts (loan_id, account_id, loan_amount, tenure_in_months, interest_rate, risk_rating, contract_date, created_date, modified_date) values
 (10007, 'QHJQ16086668469152', 1000.00, 12, 0.72, 2.00, '2021-02-23', '2021-03-31', null),
 (10009, 'HLAI21572998373138', 2500.00, 12, 0.93, 6.00, '2020-12-18', '2021-03-31', null),
 (10013, 'KCKJ18671114336555', 1000.00, 12, 0.10, 9.00, '2020-03-07', '2021-03-31', null),
