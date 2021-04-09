@@ -1,5 +1,6 @@
 connect to Loans USER db2inst1 USING db2pwd;
 
+create schema LOAN;
 set schema LOAN;
 
 CREATE TABLE LOAN.loan_contracts(
@@ -11,9 +12,9 @@ interest_rate decimal(19,2),
 risk_rating decimal(19,2),
 contract_date Date
 ,created_date Date,
-modified_date Date)
+modified_date Date);
 
-CREATE TABLE loan_fulfillment(
+CREATE TABLE LOAN.loan_fulfillment(
 Loan_id VARCHAR(20),
 Payment_id varchar(20),
 pre_emi_amount decimal(19,2),
@@ -28,9 +29,9 @@ pre_closure_date Date,
 last_update_date Date,
 created_date Date,
 modified_date Date,
-LOAN_AMOUNT numeric(32,8))
+LOAN_AMOUNT numeric(32,8));
 
-CREATE TABLE repayment_schedule(
+CREATE TABLE LOAN.repayment_schedule(
 Loan_id VARCHAR(20),
 Repayment_id varchar(20),
 due_emi_amount decimal(19,2),
@@ -40,10 +41,10 @@ receive_date date,
 is_emi_payment_defaulted boolean,
 is_emi_payment_advanced boolean,
 created_date Date,
-modified_date Date)
+modified_date Date);
 
 
-insert into loan.loan_contracts (loan_id, accountid, loan_amount, tenure_in_months, interest_rate, risk_rating, contract_date, created_date, modified_date) values
+insert into LOAN.loan_contracts (loan_id, accountid, loan_amount, tenure_in_months, interest_rate, risk_rating, contract_date, created_date, modified_date) values
 (10007, 'QHJQ16086668469152', 1000.00, 12, 0.72, 2.00, '2021-02-23', '2021-03-31', null),
 (10009, 'HLAI21572998373138', 2500.00, 12, 0.93, 6.00, '2020-12-18', '2021-03-31', null),
 (10013, 'KCKJ18671114336555', 1000.00, 12, 0.10, 9.00, '2020-03-07', '2021-03-31', null),
@@ -65,7 +66,7 @@ insert into loan.loan_contracts (loan_id, accountid, loan_amount, tenure_in_mont
 (10004, 'YEVS12188246021778', 500.00, 18, 0.69, 5.00, '2018-09-06', '2021-03-31', null),
 (10006, 'IXGT21878178714230', 2000.00, 18, 0.28, 2.00, '2018-09-06', '2021-03-31', null);
 
-insert into loan.loan_fulfillment (loan_id, payment_id, pre_emi_amount, emi_amount, release_date_from_investor, disburse_date_to_borrower, pre_emi_due_date, emi_start_date, num_of_total_emi, pre_closure_flag, pre_closure_date, last_update_date, created_date, modified_date) values
+insert into LOAN.loan_fulfillment (loan_id, payment_id, pre_emi_amount, emi_amount, release_date_from_investor, disburse_date_to_borrower, pre_emi_due_date, emi_start_date, num_of_total_emi, pre_closure_flag, pre_closure_date, last_update_date, created_date, modified_date) values
 (10007, 4, 0.00, 83.93, '2021-03-02', '2021-03-09', '2021-03-16', '2021-04-01', 12, 'false', null, '2021-03-01', '2021-04-01', null) ,
 (10009, 5, 0.00, 210.27, '2021-01-08', '2021-01-15', '2021-01-22', '2021-02-01', 12, 'false', null, '2021-03-01', '2021-04-01', null),
 (10013, 6, 0.00, 83.42, '2020-03-14', '2020-03-21', '2020-03-28', '2020-04-01', 12, 'false', null, '2021-03-01', '2021-04-01', null),
@@ -89,7 +90,7 @@ insert into loan.loan_fulfillment (loan_id, payment_id, pre_emi_amount, emi_amou
 
 
 
-insert into loan.repayment_schedule (loan_id, repayment_id, due_emi_amount, emi_amount_recieved, emi_due_date, receive_date, is_emi_payment_defaulted, is_emi_payment_advanced, created_date, modified_date) values
+insert into LOAN.repayment_schedule (loan_id, repayment_id, due_emi_amount, emi_amount_recieved, emi_due_date, receive_date, is_emi_payment_defaulted, is_emi_payment_advanced, created_date, modified_date) values
 (10007, 249, 83.93, 83.93, '2021-04-01', '2021-04-01', 'false', 'false', '2021-04-01', null),
 (10009, 250, 210.27, 210.27, '2021-02-01', '2021-02-01', 'true', 'false', '2021-04-01', null),
 (10009, 250, 210.27, 210.27, '2021-03-01', '2021-03-01', 'true', 'false', '2021-04-01', null),
