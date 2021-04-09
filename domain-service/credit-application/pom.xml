@@ -17,6 +17,9 @@
     <properties>
         <java.version>11</java.version>
         <checkstyle.version>3.1.2</checkstyle.version>
+        <sonar.exclusions>
+            **/config/XRayInspector.java
+        </sonar.exclusions>
     </properties>
 
     <dependencies>
