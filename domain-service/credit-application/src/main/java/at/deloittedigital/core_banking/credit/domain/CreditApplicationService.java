@@ -5,10 +5,12 @@ import at.deloittedigital.core_banking.credit.datasource.model.Client;
 import at.deloittedigital.core_banking.credit.datasource.model.CreditData;
 import at.deloittedigital.core_banking.credit.domain.data.ClientInfo;
 import at.deloittedigital.core_banking.credit.domain.data.ClientInfoMapper;
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
+@XRayEnabled
 public class CreditApplicationService {
 
     private final CreditDataService creditDataService;
