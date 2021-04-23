@@ -25,11 +25,11 @@ const Tabs: React.FC<TabsType> = properties => {
     setElements(updElements);
   };
   return (
-    <ul className="list-reset flex border-b">
+    <ul className="list-reset flex border-b mb-4">
       {elements.map((el, id) => (
         <li className="-mb-px mr-1" key={id}>
           <div
-            className={`bg-white inline-block py-2 px-4 cursor-pointer ${
+            className={`bg-white inline-block py-2 px-4 text-sm  cursor-pointer ${
               el.active
                 ? "font-semibold text-gray-800 border-l border-t border-r rounded-t"
                 : "text-gray-400 hover:text-gray-800"

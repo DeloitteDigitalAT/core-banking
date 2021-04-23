@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Main page snapshot renders 1`] = `
+<div
+  className="flex-grow"
+>
+  <div
+    className="text-xl py-4 mb-0 text-gray-800"
+  >
+    Search customer application
+  </div>
+  <ul
+    className="list-reset flex border-b mb-4"
+  >
+    <li
+      className="-mb-px mr-1"
+    >
+      <div
+        className="bg-white inline-block py-2 px-4 text-sm  cursor-pointer font-semibold text-gray-800 border-l border-t border-r rounded-t"
+        onClick={[Function]}
+      >
+        Search by Name
+      </div>
+    </li>
+    <li
+      className="-mb-px mr-1"
+    >
+      <div
+        className="bg-white inline-block py-2 px-4 text-sm  cursor-pointer text-gray-400 hover:text-gray-800"
+        onClick={[Function]}
+      >
+        Search by Application ID
+      </div>
+    </li>
+  </ul>
+  <div
+    className="grid grid-cols-6"
+  >
+    <div
+      className="col-span-6 max-w-sm"
+    >
+      <label
+        className="block mt-4"
+      >
+        <span
+          className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+        >
+          First Name
+        </span>
+        <input
+          className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  "
+          onChange={[Function]}
+          placeholder="John"
+          readOnly={false}
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="col-span-6 max-w-sm"
+    >
+      <label
+        className="block mt-4"
+      >
+        <span
+          className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+        >
+          Last Name
+           *
+        </span>
+        <input
+          className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  "
+          onChange={[Function]}
+          placeholder="Doe"
+          readOnly={false}
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="col-span-6 max-w-sm"
+    >
+      <button
+        className="bg-gradient-to-b from-green-400 via-green-500 to-green-600 border-green-500 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-sm border text-white rounded-md px-6 py-2 my-4 transition duration-500 ease select-none focus:outline-none focus:shadow-outline"
+        onClick={[Function]}
+        type="button"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+`;

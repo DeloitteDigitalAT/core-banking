@@ -2,42 +2,40 @@ import React, { useState, useEffect } from "react";
 import Input from "./Input";
 import Button from "./Button";
 
-enum FormElementType {
-  input = "input",
-  button = "button",
-}
-
-interface ElementInputType {
+interface CommonType {
   id: number;
-  type: FormElementType;
+  type: string;
+}
+interface InputType extends CommonType {
   label: string;
   placeholder: string;
   value: string;
   required: boolean;
-  error?: boolean;
+  readonly: boolean;
+  error: boolean;
+  divClass: string;
   text?: never;
   handler?: never;
   active?: never;
 }
 
-interface ElementButtonType {
-  id: number;
-  type: FormElementType;
+interface ButtonType extends CommonType {
   text: string;
   handler: () => void;
-  actibe?: boolean;
+  active?: boolean;
+  divClass: string;
   required?: never;
   error?: never;
   value?: never;
   label?: never;
   placeholder?: never;
+  readonly?: never;
 }
 
-type ElementType = ElementInputType | ElementButtonType;
-
+type ElementType = InputType | ButtonType;
 interface FormType {
-  elements: ElementType[];
-  setForm: (el: ElementType[]) => void;
+  elements: Array<ElementType>;
+  setForm: (el: Array<ElementType>) => void;
 }
 
 const Form: React.FC<FormType> = properties => {
@@ -48,7 +46,7 @@ const Form: React.FC<FormType> = properties => {
   }, []);
   const checkErrors = () => {
     const updElements = [...elements].map(element => {
-      if (element.type === FormElementType.input && element.required && !element.value) {
+      if (element.type === "input" && element.required && !element.value) {
         element.error = true;
       }
       return element;
@@ -60,7 +58,7 @@ const Form: React.FC<FormType> = properties => {
   };
   const changeForm = (id: number, newValue: string) => {
     const updElements = [...elements].map(element => {
-      if (element.id === id && element.type === FormElementType.input) {
+      if (element.id === id && element.type === "input") {
         if (element.error && newValue.length) {
           element.error = false;
         }
@@ -75,7 +73,7 @@ const Form: React.FC<FormType> = properties => {
   };
   const clearForm = () => {
     const updElements = [...elements].map(element => {
-      if (element.type === FormElementType.input && element.value) {
+      if (element.type === "input" && element.value) {
         element.value = "";
         element.error = false;
       }
@@ -85,45 +83,48 @@ const Form: React.FC<FormType> = properties => {
   };
 
   return (
-    <div>
+    <div className="grid grid-cols-6">
       {elements.map(element => {
-        if (element.type === FormElementType.input) {
+        if (element.type === "input") {
           return (
-            <Input
-              key={element.id}
-              label={element.label!}
-              placeholder={element.placeholder!}
-              value={element.value!}
-              required={element.required!}
-              error={element.error!}
-              setInput={value => {
-                changeForm(element.id, value);
-              }}
-            />
+            <div key={element.id} className={element.divClass}>
+              <Input
+                label={element.label!}
+                placeholder={element.placeholder!}
+                value={element.value!}
+                required={element.required!}
+                error={element.error!}
+                readonly={element.readonly!}
+                setInput={value => {
+                  changeForm(element.id, value);
+                }}
+              />
+            </div>
           );
         }
-        if (element.type === FormElementType.button) {
+        if (element.type === "button") {
           return (
-            <Button
-              key={element.id}
-              text={element.text!}
-              active={!elements.find(e => e.error)}
-              handler={() => {
-                if (elements.find(e => e.required && !e.value)) {
-                  checkErrors();
-                  setFormError("Required fields must be filled in");
-                } else {
-                  setFormError("");
-                  element.handler!();
-                  clearForm();
-                }
-              }}
-            />
+            <div key={element.id} className={element.divClass}>
+              <Button
+                text={element.text!}
+                active={!elements.find(e => e.error)}
+                handler={() => {
+                  if (elements.find(e => e.required && !e.value)) {
+                    checkErrors();
+                    setFormError("Required fields must be filled in");
+                  } else {
+                    setFormError("");
+                    element.handler!();
+                    clearForm();
+                  }
+                }}
+              />
+            </div>
           );
         }
         return null;
       })}
-      {elements.find(e => e.error) && <p>{formError}</p>}
+      {elements.find(e => e.error) && <p className="whitespace-nowrap	text-mango-600 text-sm">{formError}</p>}
     </div>
   );
 };

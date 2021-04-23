@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Bottom component snapshot renders 1`] = `
+<div
+  className="px-4 text-gray-600 bg-gradient-to-b from-green-100 via-green-200 to-green-200 rounded text-sm py-5 mt-6 w-full"
+>
+  © 
+  2021
+   Deloitte Digital
+   
+</div>
+`;
