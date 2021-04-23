@@ -1,0 +1,73 @@
+[
+  {
+    "client_id": 1,
+    "created_date": "2021-03-08",
+    "first_name": "Judy",
+    "last_name": "Green",
+    "date_of_birth": "1970-11-03",
+    "social_security_number": "377-82-5154",
+    "gender": "F",
+    "marital_status": "Engaged",
+    "residential_status": "With Family",
+    "citizenship": "Turkmenistan",
+    "address_details_id": 8,
+    "house_no": 701,
+    "street_name": "898 Cynthia Inlet",
+    "city": "Graz",
+    "postal_code": 1200,
+    "phone_number": "(930)544-3449x587",
+    "mobile_number": null,
+    "email_id": "judy.green@gmail.com",
+    "employment_status": "Selfemployed",
+    "annual_income": 84000.0,
+    "employed_years": 17,
+    "position": "Selfemployed",
+    "company_employed": "N/A",
+    "credit_amount": 76000.0,
+    "interest_rate": 0.68,
+    "planned_emi": 3209.73,
+    "duration_in_months": 24,
+    "files": [
+      {
+        "document_list_id": 1,
+        "name": "ID",
+        "description": "Identity Card",
+        "location_url": "../images/Id.jpeg",
+        "category": "ID",
+        "created_date": "2021-03-08"
+      },
+      {
+        "document_list_id": 21,
+        "name": "Payslip1",
+        "description": "Payslip for month 1",
+        "location_url": "../images/Payslip.jpeg",
+        "category": "Payslip",
+        "created_date": "2021-03-08"
+      },
+      {
+        "document_list_id": 41,
+        "name": "Payslip2",
+        "description": "Payslip for month 2",
+        "location_url": "../images/Payslip.jpeg",
+        "category": "Payslip",
+        "created_date": "2021-03-08"
+      },
+      {
+        "document_list_id": 61,
+        "name": "Payslip3",
+        "description": "Payslip for month 3",
+        "location_url": "../images/Payslip.jpeg",
+        "category": "Payslip",
+        "created_date": "2021-03-08"
+      },
+      {
+        "document_list_id": 81,
+        "name": "Meldezettel",
+        "description": "Address proof",
+        "location_url": "../images/Meldezettel.jpeg",
+        "category": "Meldezettel",
+        "created_date": "2021-03-08"
+      }
+    ]
+  }
+]
