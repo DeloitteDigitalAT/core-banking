@@ -734,7 +734,7 @@ exports[`UI/Application page snapshot renders 1`] = `
                 className="py-2 px-2 text-denim-600 font-medium"
               >
                 <a
-                  href="Id.jpeg"
+                  href="../images/Id.jpeg"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -769,7 +769,7 @@ exports[`UI/Application page snapshot renders 1`] = `
                 className="py-2 px-2 text-denim-600 font-medium"
               >
                 <a
-                  href="Payslip.jpg"
+                  href="../images/Payslip.jpeg"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -804,7 +804,7 @@ exports[`UI/Application page snapshot renders 1`] = `
                 className="py-2 px-2 text-denim-600 font-medium"
               >
                 <a
-                  href="Payslip.jpg"
+                  href="../images/Payslip.jpeg"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -839,7 +839,7 @@ exports[`UI/Application page snapshot renders 1`] = `
                 className="py-2 px-2 text-denim-600 font-medium"
               >
                 <a
-                  href="Payslip.jpg"
+                  href="../images/Payslip.jpeg"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -874,7 +874,7 @@ exports[`UI/Application page snapshot renders 1`] = `
                 className="py-2 px-2 text-denim-600 font-medium"
               >
                 <a
-                  href="Meldezettel.png"
+                  href="../images/Meldezettel.jpeg"
                   rel="noreferrer"
                   target="_blank"
                 >
