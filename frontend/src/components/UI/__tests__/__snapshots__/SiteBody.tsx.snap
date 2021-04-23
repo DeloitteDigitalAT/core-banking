@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/SiteBody component snapshot renders 1`] = `
+<div
+  className="max-w-6xl mx-auto px-2 md:px-4 flex flex-col min-h-screen"
+/>
+`;

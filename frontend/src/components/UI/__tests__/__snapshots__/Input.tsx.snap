@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Input component snapshot renders 1`] = `
+<label
+  className="block mt-4"
+>
+  <span
+    className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+  >
+    label
+     *
+  </span>
+  <input
+    className="form-input mt-1 block w-full text-sm border rounded py-2 px-2 border-mango-600 "
+    onChange={[Function]}
+    placeholder="placeholder"
+    readOnly={false}
+    value="value"
+  />
+</label>
+`;

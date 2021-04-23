@@ -1,7 +1,13 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: [],
+  purge: {
+    mode: "all",
+    content: ["./src/**/*.ts", "./src/**/*.tsx"],
+    options: {
+      safelist: ["bg-pacific-100"],
+    },
+  },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -766,6 +772,7 @@ module.exports = {
       opacity: "opacity",
       shadow: "box-shadow",
       transform: "transform",
+      "max-height": "max-height",
     },
     transitionTimingFunction: {
       DEFAULT: "cubic-bezier(0.4, 0, 0.2, 1)",

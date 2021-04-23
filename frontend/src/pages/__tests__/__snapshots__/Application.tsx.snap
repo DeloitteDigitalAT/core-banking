@@ -1,0 +1,906 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Application page snapshot renders 1`] = `
+<div
+  className="flex-grow mb-4"
+>
+  <div
+    className="text-xl py-4 mb-0 text-gray-800"
+  >
+    Application ID: 
+    123
+  </div>
+  <div
+    className="grid grid-cols-6 mb-2 text-sm"
+  >
+    <div
+      className="col-span-3"
+    >
+      Creation date: 
+      2021-03-08
+    </div>
+    <div
+      className="col-span-3 text-right"
+    >
+      <button
+        className="bg-gradient-to-b from-green-100 to-green-200 border-green-100 text-xs hover:bg-green-400 hover:from-green-200 hover:to-green-300 border text-green-800 rounded-md px-2 py-0 transition duration-500 ease select-none focus:outline-none focus:shadow-outline undefined"
+        onClick={[Function]}
+        type="button"
+      >
+        open all
+      </button>
+      <button
+        className="bg-gradient-to-b from-green-100 to-green-200 border-green-100 text-xs hover:bg-green-400 hover:from-green-200 hover:to-green-300 border text-green-800 rounded-md px-2 py-0 transition duration-500 ease select-none focus:outline-none focus:shadow-outline ml-2"
+        onClick={[Function]}
+        type="button"
+      >
+        close all
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="grid grid-cols-6 -mx-4 border-l-2 block bg-opacity-30 uppercase tracking-wide text-xs font-semibold text-green-800 pl-4
+        py-2 cursor-pointer border-pacific-200 bg-gradient-to-r from-pacific-100 to-pacific-50 hover:from-pacific-200 hover:to-pacific-100"
+      onClick={[Function]}
+    >
+      <div
+        className="col-span-5 pt-1"
+      >
+        Personal data
+      </div>
+      <div
+        className="col-span-1 w-6 h-6 justify-center items-center justify-self-end mr-4 flex text-pacific-400"
+      >
+        <svg
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="pl-4 pr-4 -mx-4 border-l-2  overflow-hidden pb-6 border-pacific-100"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "auto",
+          "maxHeight": "10000px",
+          "paddingBottom": "1.5rem",
+          "transition": "max-height 1s",
+        }
+      }
+    >
+      <div
+        className="grid grid-cols-6"
+      >
+        <div
+          className="col-span-6 md:col-span-3"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              First Name
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Judy"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-3 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Last Name
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Green"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-2 md:col-start-1 col-span-1"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Date of birth
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="1970-11-03"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-1 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Gender
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="F"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Social security number
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="377-82-5154"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Citizenship
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Turkmenistan"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Marital status
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Engaged"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Residential status
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="With Family"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="grid grid-cols-6 -mx-4 border-l-2 block bg-opacity-30 uppercase tracking-wide text-xs font-semibold text-green-800 pl-4
+        py-2 cursor-pointer border-pacific-200 bg-gradient-to-r from-pacific-100 to-pacific-50 hover:from-pacific-200 hover:to-pacific-100"
+      onClick={[Function]}
+    >
+      <div
+        className="col-span-5 pt-1"
+      >
+        Address
+      </div>
+      <div
+        className="col-span-1 w-6 h-6 justify-center items-center justify-self-end mr-4 flex text-pacific-400"
+      >
+        <svg
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="pl-4 pr-4 -mx-4 border-l-2  overflow-hidden pb-6 border-pacific-100"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "auto",
+          "maxHeight": "10000px",
+          "paddingBottom": "1.5rem",
+          "transition": "max-height 1s",
+        }
+      }
+    >
+      <div
+        className="grid grid-cols-6"
+      >
+        <div
+          className="col-span-6"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Address
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="1200, Graz, 898 Cynthia Inlet, 701"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-2"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Phone number
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="(930)544-3449x587"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-2 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Mobile number
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-2 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Email
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="judy.green@gmail.com"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="grid grid-cols-6 -mx-4 border-l-2 block bg-opacity-30 uppercase tracking-wide text-xs font-semibold text-green-800 pl-4
+        py-2 cursor-pointer border-pacific-200 bg-gradient-to-r from-pacific-100 to-pacific-50 hover:from-pacific-200 hover:to-pacific-100"
+      onClick={[Function]}
+    >
+      <div
+        className="col-span-5 pt-1"
+      >
+        Employment status
+      </div>
+      <div
+        className="col-span-1 w-6 h-6 justify-center items-center justify-self-end mr-4 flex text-pacific-400"
+      >
+        <svg
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="pl-4 pr-4 -mx-4 border-l-2  overflow-hidden pb-6 border-pacific-100"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "auto",
+          "maxHeight": "10000px",
+          "paddingBottom": "1.5rem",
+          "transition": "max-height 1s",
+        }
+      }
+    >
+      <div
+        className="grid grid-cols-6"
+      >
+        <div
+          className="col-span-6 md:col-span-2"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Employment status
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Selfemployed"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 md:col-span-2 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Annual income (Euro)
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="84000"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 md:col-span-2 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Employed years
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="17"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-3"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Position
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="Selfemployed"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-6 md:col-span-3 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Company employed
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="N/A"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="grid grid-cols-6 -mx-4 border-l-2 block bg-opacity-30 uppercase tracking-wide text-xs font-semibold text-green-800 pl-4
+        py-2 cursor-pointer border-pacific-200 bg-gradient-to-r from-pacific-100 to-pacific-50 hover:from-pacific-200 hover:to-pacific-100"
+      onClick={[Function]}
+    >
+      <div
+        className="col-span-5 pt-1"
+      >
+        Credit information
+      </div>
+      <div
+        className="col-span-1 w-6 h-6 justify-center items-center justify-self-end mr-4 flex text-pacific-400"
+      >
+        <svg
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="pl-4 pr-4 -mx-4 border-l-2  overflow-hidden pb-6 border-pacific-100"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "auto",
+          "maxHeight": "10000px",
+          "paddingBottom": "1.5rem",
+          "transition": "max-height 1s",
+        }
+      }
+    >
+      <div
+        className="grid grid-cols-6"
+      >
+        <div
+          className="col-span-3 md:col-span-2"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Credit amount requested
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="76000"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 md:col-span-1 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Interest rate
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="0.68"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 md:col-span-1 md:pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Planned emi
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="3209.73"
+            />
+          </label>
+        </div>
+        <div
+          className="col-span-3 md:col-span-2 pl-4"
+        >
+          <label
+            className="block mt-4"
+          >
+            <span
+              className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+            >
+              Duration in months
+            </span>
+            <input
+              className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+              onChange={[Function]}
+              placeholder=""
+              readOnly={true}
+              value="24"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="grid grid-cols-6 -mx-4 border-l-2 block bg-opacity-30 uppercase tracking-wide text-xs font-semibold text-green-800 pl-4
+        py-2 cursor-pointer border-pacific-200 bg-gradient-to-r from-pacific-100 to-pacific-50 hover:from-pacific-200 hover:to-pacific-100"
+      onClick={[Function]}
+    >
+      <div
+        className="col-span-5 pt-1"
+      >
+        Documents
+      </div>
+      <div
+        className="col-span-1 w-6 h-6 justify-center items-center justify-self-end mr-4 flex text-pacific-400"
+      >
+        <svg
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="pl-4 pr-4 -mx-4 border-l-2  overflow-hidden pb-6 border-pacific-100"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "auto",
+          "maxHeight": "10000px",
+          "paddingBottom": "1.5rem",
+          "transition": "max-height 1s",
+        }
+      }
+    >
+      <div
+        className="mt-4"
+      >
+        <table
+          className="min-w-max w-full table-auto -mx-2"
+        >
+          <thead
+            className="bg-pacific-100 text-green-800 uppercase text-xs"
+          >
+            <tr>
+              <th
+                className="py-2 px-2 text-left"
+              >
+                ID
+              </th>
+              <th
+                className="py-2 px-2 text-left"
+              >
+                Name
+              </th>
+              <th
+                className="py-2 px-2 text-left"
+              >
+                Description
+              </th>
+              <th
+                className="py-2 px-2 text-left"
+              >
+                Category
+              </th>
+              <th
+                className="py-2 px-2 text-left"
+              >
+                Created date
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="text-gray-600 text-sm"
+          >
+            <tr
+              className="border-b border-gray-200 "
+            >
+              <td
+                className="py-2 px-2"
+              >
+                1
+              </td>
+              <td
+                className="py-2 px-2 text-denim-600 font-medium"
+              >
+                <a
+                  href="../images/Id.jpeg"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ID
+                </a>
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Identity Card
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                ID
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                2021-03-08
+              </td>
+            </tr>
+            <tr
+              className="border-b border-gray-200 bg-pacific-50 bg-opacity-50"
+            >
+              <td
+                className="py-2 px-2"
+              >
+                21
+              </td>
+              <td
+                className="py-2 px-2 text-denim-600 font-medium"
+              >
+                <a
+                  href="../images/Payslip.jpeg"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Payslip1
+                </a>
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip for month 1
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                2021-03-08
+              </td>
+            </tr>
+            <tr
+              className="border-b border-gray-200 "
+            >
+              <td
+                className="py-2 px-2"
+              >
+                41
+              </td>
+              <td
+                className="py-2 px-2 text-denim-600 font-medium"
+              >
+                <a
+                  href="../images/Payslip.jpeg"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Payslip2
+                </a>
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip for month 2
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                2021-03-08
+              </td>
+            </tr>
+            <tr
+              className="border-b border-gray-200 bg-pacific-50 bg-opacity-50"
+            >
+              <td
+                className="py-2 px-2"
+              >
+                61
+              </td>
+              <td
+                className="py-2 px-2 text-denim-600 font-medium"
+              >
+                <a
+                  href="../images/Payslip.jpeg"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Payslip3
+                </a>
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip for month 3
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Payslip
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                2021-03-08
+              </td>
+            </tr>
+            <tr
+              className="border-b border-gray-200 "
+            >
+              <td
+                className="py-2 px-2"
+              >
+                81
+              </td>
+              <td
+                className="py-2 px-2 text-denim-600 font-medium"
+              >
+                <a
+                  href="../images/Meldezettel.jpeg"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Meldezettel
+                </a>
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Address proof
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                Meldezettel
+              </td>
+              <td
+                className="py-2 px-2"
+              >
+                2021-03-08
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;

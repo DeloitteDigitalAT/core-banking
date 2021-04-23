@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Form component snapshot renders 1`] = `
+<div
+  className="grid grid-cols-6"
+>
+  <div
+    className="col-span-3 md:col-span-2"
+  >
+    <label
+      className="block mt-4"
+    >
+      <span
+        className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+      >
+        Credit amount requested
+      </span>
+      <input
+        className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={true}
+        value="123"
+      />
+    </label>
+  </div>
+  <div
+    className="col-span-3 md:col-span-1 pl-4"
+  >
+    <label
+      className="block mt-4"
+    >
+      <span
+        className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+      >
+        Interest rate
+      </span>
+      <input
+        className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={true}
+        value="456"
+      />
+    </label>
+  </div>
+  <div
+    className="col-span-3 md:col-span-1 md:pl-4"
+  >
+    <label
+      className="block mt-4"
+    >
+      <span
+        className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+      >
+        Planned emi
+      </span>
+      <input
+        className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={true}
+        value="789"
+      />
+    </label>
+  </div>
+  <div
+    className="col-span-3 md:col-span-2 pl-4"
+  >
+    <label
+      className="block mt-4"
+    >
+      <span
+        className="block uppercase tracking-wide text-xs font-semibold mb-2 text-gray-700"
+      >
+        Duration in months
+      </span>
+      <input
+        className="form-input mt-1 block w-full text-sm border rounded py-2 px-2  outline-none"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={true}
+        value="24"
+      />
+    </label>
+  </div>
+  <div
+    className="col-span-6"
+  >
+    <button
+      className="bg-gradient-to-b from-green-400 via-green-500 to-green-600 border-green-500 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-sm border text-white rounded-md px-6 py-2 my-4 transition duration-500 ease select-none focus:outline-none focus:shadow-outline"
+      onClick={[Function]}
+      type="button"
+    >
+      Search
+    </button>
+  </div>
+</div>
+`;

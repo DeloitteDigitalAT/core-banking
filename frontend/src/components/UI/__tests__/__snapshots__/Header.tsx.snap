@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Header component snapshot renders 1`] = `
+<div
+  className="text-xl py-4 mb-0 text-gray-800"
+/>
+`;

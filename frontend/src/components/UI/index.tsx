@@ -1,12 +1,15 @@
-import Top from "./Top";
-import SiteBody from "./SiteBody";
-import Header from "./Header";
+import Accordion from "./Accordion";
 import Bottom from "./Bottom";
-import Content from "./Content";
-import Logo from "./Logo";
-import Tabs from "./Tabs";
-import Form from "./Form";
-import Input from "./Input";
 import Button from "./Button";
+import Content from "./Content";
+import Documents from "./Documents";
+import Form from "./Form";
+import Header from "./Header";
+import Input from "./Input";
+import Logo from "./Logo";
+import SiteBody from "./SiteBody";
+import SmallButton from "./SmallButton";
+import Tabs from "./Tabs";
+import Top from "./Top";
 
-export { SiteBody, Header, Bottom, Content, Logo, Top, Tabs, Form, Input, Button };
+export { Accordion, Bottom, Button, Content, Documents, Form, Header, Input, Logo, SiteBody, SmallButton, Tabs, Top };

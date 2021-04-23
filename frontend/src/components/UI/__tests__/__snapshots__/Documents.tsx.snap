@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI/Documents component snapshot renders 1`] = `
+<div
+  className="mt-4"
+>
+  <table
+    className="min-w-max w-full table-auto -mx-2"
+  >
+    <thead
+      className="bg-pacific-100 text-green-800 uppercase text-xs"
+    >
+      <tr>
+        <th
+          className="py-2 px-2 text-left"
+        >
+          ID
+        </th>
+        <th
+          className="py-2 px-2 text-left"
+        >
+          Name
+        </th>
+        <th
+          className="py-2 px-2 text-left"
+        >
+          Description
+        </th>
+        <th
+          className="py-2 px-2 text-left"
+        >
+          Category
+        </th>
+        <th
+          className="py-2 px-2 text-left"
+        >
+          Created date
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="text-gray-600 text-sm"
+    >
+      <tr
+        className="border-b border-gray-200 "
+      >
+        <td
+          className="py-2 px-2"
+        >
+          1
+        </td>
+        <td
+          className="py-2 px-2 text-denim-600 font-medium"
+        >
+          <a
+            href="url"
+            rel="noreferrer"
+            target="_blank"
+          >
+            name
+          </a>
+        </td>
+        <td
+          className="py-2 px-2"
+        >
+          description
+        </td>
+        <td
+          className="py-2 px-2"
+        >
+          category
+        </td>
+        <td
+          className="py-2 px-2"
+        >
+          created date
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
